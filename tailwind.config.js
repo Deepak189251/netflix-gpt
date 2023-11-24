@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      radialGradientColors: {
+        'custom': ['circle', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.8)']
+      }
+    },
   },
   plugins: [],
 }
