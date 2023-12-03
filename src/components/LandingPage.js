@@ -1,8 +1,10 @@
  import Header from "./Header"
+ import LandingPageComp1 from "./LandingPageComp1";
  import {SlArrowRight} from "react-icons/sl";
  const LandingPage = () => {
     return (
-    <div className=" bg-center bg-cover w-[1396px] h-[640px] bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/c906271d-7184-4eec-83c9-b6d4c1a068ec/728874a6-eeda-400a-9bcf-a935a1408a4f/IN-en-20231127-popsignuptwoweeks-perspective_alpha_website_large.jpg')]">
+   <div className="container w-[100%]">
+     <div className=" bg-center bg-cover w-[1396px] h-[630px] bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/c906271d-7184-4eec-83c9-b6d4c1a068ec/728874a6-eeda-400a-9bcf-a935a1408a4f/IN-en-20231127-popsignuptwoweeks-perspective_alpha_website_large.jpg')]">
      
       
       <div className=" w-[100%] h-[100%] bg-gradient-to-t from-[rgba(0,0,0,0.8)] via-[rgba(0,0,0,0.4)] to-[rgba(0,0,0,0.8)]">
@@ -28,13 +30,19 @@
               </form>
             </div>
          </div>
+         
+         {/** <hr className=" absolute bg-red-700 px-2 py-2 "></hr> */}
         </div>  
 
         
   
       </div>
       
-    </div>
+     </div>
+    <div className=" divider w-[1396px] h-[8px] bg-[rgb(35,35,35)]"></div>
+    <LandingPageComp1 />
+   </div>  
+
     )
 }
 
