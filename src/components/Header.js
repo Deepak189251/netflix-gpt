@@ -17,7 +17,6 @@ const Header = () => {
             
              <button className=" rounded text-xs px-[12px] py-[6px] text-white w-[70px] font-semibold bg-red-600 h-[30px]">Sign In</button>
           </div>
-        {/**  <hr className=" px-2 py-2 bg-white"></hr>  */}
        </div>
     ) 
 }
