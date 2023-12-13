@@ -1,5 +1,10 @@
  import Header from "./Header"
  import LandingPageComp1 from "./LandingPageComp1";
+ import LandingPageComp2 from "./LandingPageComp2";
+ import LandingPageComp3 from "./LandingPageComp3";
+ import LandingPageComp4 from "./LandingPageComp4";
+ import FaqSection from "./FaqSection";
+ import Footer from "./Footer";
  import {SlArrowRight} from "react-icons/sl";
  const LandingPage = () => {
     return (
@@ -40,6 +45,11 @@
      </div>
     <div className=" divider w-[1381px] h-[8px] bg-[rgb(35,35,35)]"></div>
     <LandingPageComp1 />
+    <LandingPageComp2 />
+    <LandingPageComp3 />
+    <LandingPageComp4 />
+    <FaqSection />
+    <Footer />
    </div>  
 
     )

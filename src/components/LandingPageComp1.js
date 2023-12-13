@@ -11,9 +11,8 @@ const LandingPageComp1 = () => {
              <div className=" w-[525px] pl-[10px] relative">
                <img className= " h-[394px] w-[519px] bottom-[19px] z-[1] absolute" alt="tv" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" data-uia="nmhp-card-animation-asset-image"/>
                <video className=" absolute w-[374px] bottom-[52px] left-[80px] h-[211px] top-[109px]" data-uia="nmhp-card-animation-asset-video" autoPlay muted loop ><source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v" type="video/mp4"/></video>
-                
-            
-              </div>
+                 
+             </div>
            </div> 
           </div>
             <div className=" divider w-[1381px] h-[8px] bg-[rgb(35,35,35)]"></div>
