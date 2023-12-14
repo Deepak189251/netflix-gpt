@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 const Header = () => {
     return (
        <div className=" absolute flex justify-between w-[100%]">
@@ -15,7 +15,7 @@ const Header = () => {
               </select> 
             </div>
     
-             <button className=" rounded text-xs px-[12px] py-[6px] text-white w-[70px] font-semibold bg-red-600 h-[30px]">Sign In</button>
+            <Link to={"/login"}> <button className=" rounded text-xs px-[12px] py-[6px] text-white w-[70px] font-semibold bg-red-600 h-[30px]">Sign In</button> </Link>
           </div>
        </div>
     ) 
