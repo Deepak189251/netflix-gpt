@@ -25,12 +25,12 @@
               <p className=" text-xl font-normal">Ready to watch? Enter your email to create or restart your membership.</p>
              
               <form className=" flex justify-between mt-[13px]">
-              <div className=" bg-black w-[374px] h-[56px] ml-[190px] border rounded text-left pb-2">
-                 <lebel className="ml-[10px] text-xs mt-0 text-[rgba(255,255,255,0.7)]">Email address</lebel>
-                 <div className="  ml-[10px] mb-[5px]">
-                    <input type="email" className="bg-transparent" ></input>
+             
+                 
+                 <div className="">
+                    <input type="email" className=" mb-[5px]  bg-black w-[374px] h-[56px] ml-[190px] border rounded text-left pb-2 pl-3" placeholder="Email address"></input>
                  </div>  
-              </div>
+            
               <button type="submit" className=" bg-red-600 w-[203px] h-[56px] mr-[180px] text-2xl font-semibold rounded text-left pl-3 flex pt-2">Get started <SlArrowRight className=" pl-[10px] pt-[6px] text-3xl font-extrabold"/> </button>
               </form>
             </div>
