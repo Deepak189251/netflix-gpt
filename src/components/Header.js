@@ -15,7 +15,7 @@ const Header = () => {
               </select> 
             </div>
     
-            <Link to={"/login"}> <button className=" rounded text-xs px-[12px] py-[6px] text-white w-[70px] font-semibold bg-red-600 h-[30px]">Sign In</button> </Link>
+            <Link to={"/login"}> <button className=" rounded text-xs px-[12px] py-[6px] text-white w-[70px] font-semibold bg-red-600 h-[30px] hover:bg-[rgb(193,17,25)] duration-300">Sign In</button> </Link>
           </div>
        </div>
     ) 

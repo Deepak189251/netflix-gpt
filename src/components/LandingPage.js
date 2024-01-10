@@ -9,7 +9,7 @@
  const LandingPage = () => {
     return (
    <div className="container">
-     <div className=" bg-center bg-cover w-[1381px] h-[630px] bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/c906271d-7184-4eec-83c9-b6d4c1a068ec/728874a6-eeda-400a-9bcf-a935a1408a4f/IN-en-20231127-popsignuptwoweeks-perspective_alpha_website_large.jpg')]">
+     <div className=" bg-center bg-cover w-[1381px] h-[630px] bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/c38a2d52-138e-48a3-ab68-36787ece46b3/eeb03fc9-99c6-438e-824d-32917ce55783/IN-en-20240101-popsignuptwoweeks-perspective_alpha_website_large.jpg')]">
      
       
       <div className=" w-[100%] h-[100%] bg-gradient-to-t from-[rgba(0,0,0,0.8)] via-[rgba(0,0,0,0.4)] to-[rgba(0,0,0,0.8)]">
@@ -31,7 +31,7 @@
                     <input type="email" className=" mb-[5px]  bg-black w-[374px] h-[56px] ml-[190px] border rounded text-left pb-2 pl-3" placeholder="Email address"></input>
                  </div>  
             
-              <button type="submit" className=" bg-red-600 w-[203px] h-[56px] mr-[180px] text-2xl font-semibold rounded text-left pl-3 flex pt-2">Get started <SlArrowRight className=" pl-[10px] pt-[6px] text-3xl font-extrabold"/> </button>
+              <button type="submit" className=" bg-red-600 w-[203px] h-[56px] mr-[180px] text-2xl font-semibold rounded text-left pl-3 flex pt-2 hover:bg-[rgb(193,17,25)] duration-300">Get started <SlArrowRight className=" pl-[10px] pt-[6px] text-3xl font-extrabold"/> </button>
               </form>
             </div>
          </div>
