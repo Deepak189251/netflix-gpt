@@ -14,7 +14,7 @@ const Login = () => {
                    <form>
                      <input className=" w-[100%] h-[50px] mb-[16px] pl-[10px] rounded placeholder-[#8c8c8c] bg-[#333]" type="Email" placeholder="Email or phone number"></input>
                      <input className=" w-[100%] h-[50px] mb-[16px] pl-[10px] rounded placeholder-[#8c8c8c] bg-[#333]" type="password" placeholder="Password"></input>
-                     <button className=" w-[100%] h-[50px] mb-[16px] rounded bg-red-600" type="submit">Sign In</button>
+                     <button className=" w-[100%] h-[50px] mb-[16px] rounded bg-red-600 hover:bg-[rgb(193,17,25)] duration-300" type="submit">Sign In</button>
                      
                      <div className=" w-[100%] flex justify-between">
                        <div >
