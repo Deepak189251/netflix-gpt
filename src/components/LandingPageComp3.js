@@ -9,7 +9,7 @@ const LandingPageComp3 = () => {
                         <p className="text-[21px] font-medium mt-[16px]">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
                     </div>
                     <div className="w-[525px] relative">
-                      <img className=" absolute z-[1]" alt="" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png" data-uia="nmhp-card-animation-asset-image" class="default-ltr-cache-1d3w5wq" />
+                      <img className=" absolute z-[1]" alt="" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png" />
                       <video className="absolute w-[335px] h-[189px] top-[46px] left-[99px]" data-uia="nmhp-card-animation-asset-video" autoPlay muted loop><source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v" type="video/mp4"/></video>
                     </div>
                 </div>
