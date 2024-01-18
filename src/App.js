@@ -2,6 +2,8 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import Login from "./components/LogIn";
 import Browse from "./components/Browse";
+import SignupComponent1 from "./components/signup/SignupComponent1";
+import SignupComponent2 from "./components/signup/SignupComponent2";
 const Applayout = () => {
   
   return(
@@ -25,6 +27,14 @@ function App() {
         {
           path: "/login",
           element: <Login />
+        },
+        {
+          path: "/signup-form",
+          element: <SignupComponent1 />
+        },
+        {
+          path: "/signup-plan",
+          element: <SignupComponent2 />
         }
       ]
     },
