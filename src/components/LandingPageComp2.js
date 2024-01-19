@@ -8,7 +8,7 @@ const LandingPageComp2 = () => {
                        <img className=" h-[434px] absolute" alt="" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" data-uia="nmhp-card-animation-asset-image" class="default-ltr-cache-1d3w5wq" />
                        <div className=" w-[290px] h-[100px]  bg-black absolute top-[310px] left-[115px] py-[8px] px-[12px] rounded-md flex border-[2px] border-[rgba(128,128,128,0.7)">
                            <div className=" h-[84px]">
-                              <img className=" h-[84px]" data-uia="nmhp-card-animation-asset-animation" alt="" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png" class="default-ltr-cache-1t1z3a4"/>
+                              <img className=" w-[100%] h-[100%]" alt="" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png"/>
                            </div>
                            <div className=" ml-[14px] mt-[22px] w-[168px]  h-[40px]"> 
                               <h1 className=" text-[16px] font-semibold text-white">Stranger Things</h1>
