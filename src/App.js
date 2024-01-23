@@ -4,17 +4,37 @@ import Login from "./components/LogIn";
 import Browse from "./components/Browse";
 import SignupComponent1 from "./components/signup/SignupComponent1";
 import SignupComponent2 from "./components/signup/SignupComponent2";
+import Header from "./components/Header";
+//import { useDispatch } from "react-redux";
+//import { useEffect } from "react";
+//import { auth } from "./utils/Firebase";
+//import { onAuthStateChanged } from "firebase/auth";
+//import { addUser, removeUser } from "./utils/UserSlice";
+//import UserContext from "./utils/Context";
+//import { UserState } from "./utils/Context";
+//import ProtectedRoute from "./utils/ProtectedRoute";
 const Applayout = () => {
-  
+
+
+
   return(
-    <div className="app">
-       <Outlet/>
-    </div>
+    
+      <div className="app">
+        <Header />
+        <Outlet/>
+      </div> 
+    
+
+    
   )
 }
 
 
 function App() {
+  
+  
+   
+ 
   const appRouter = createBrowserRouter([
     {
       path: "/",
@@ -26,7 +46,7 @@ function App() {
         },
         {
           path: "/login",
-          element: <Login />
+          element: <Login /> 
         },
         {
           path: "/signup-form",
@@ -39,10 +59,20 @@ function App() {
       ]
     },
     {
+      path: "/signup-form",
+      element: <SignupComponent1 />
+    },
+    {
       path: "/browse",
-      element: <Browse />
+      element: <Browse /> 
     }
-  ])
+    
+  ]) 
+
+  
+
+
+
   return (
     <RouterProvider router={appRouter} />
   );
