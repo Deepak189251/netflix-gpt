@@ -2,8 +2,8 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import Login from "./components/LogIn";
 import Browse from "./components/Browse";
-import SignupComponent1 from "./components/signup/SignupComponent1";
-import SignupComponent2 from "./components/signup/SignupComponent2";
+import SignupComponent1 from "./components/SignupComponent1";
+//import SignupComponent2 from "./components/signup/SignupComponent2";
 import Header from "./components/Header";
 //import { useDispatch } from "react-redux";
 //import { useEffect } from "react";
@@ -51,17 +51,10 @@ function App() {
         {
           path: "/signup-form",
           element: <SignupComponent1 />
-        },
-        {
-          path: "/signup-plan",
-          element: <SignupComponent2 />
         }
       ]
     },
-    {
-      path: "/signup-form",
-      element: <SignupComponent1 />
-    },
+    
     {
       path: "/browse",
       element: <Browse /> 

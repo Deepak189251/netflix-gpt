@@ -16,7 +16,7 @@ const FaqSection = () => {
 
     return(
         <div>
-            <div className="container-faq text-white bg-black w-[1381px] pt-[50px] pb-[60px]">
+            <div className="container-faq text-white bg-black w-[100%] pt-[50px] pb-[60px]">
                 <div className=" w-[1061px] ml-[160px] mr-[160px]">
                     <h1 className="text-[43px] font-extrabold text-center mb-[25px]">Frequently Asked Questions</h1>
                      {Data.map((res, index) => {
