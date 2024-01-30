@@ -51,14 +51,15 @@ function App() {
         {
           path: "/signup-form",
           element: <SignupComponent1 />
+        },
+        {
+          path: "/browse",
+          element: <Browse /> 
         }
       ]
     },
     
-    {
-      path: "/browse",
-      element: <Browse /> 
-    }
+   
     
   ]) 
 
