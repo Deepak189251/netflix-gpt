@@ -1,4 +1,4 @@
-import Header from "./Header"
+//import Header from "./Header"
  import LandingPageComp1 from "./LandingPageComp1";
  import LandingPageComp2 from "./LandingPageComp2";
  import LandingPageComp3 from "./LandingPageComp3";
@@ -9,12 +9,12 @@ import Header from "./Header"
  import { Link } from "react-router-dom";
  const LandingPage = () => {
     return (
-   <div className="container">
-     <div className=" bg-center bg-cover w-[1381px] h-[630px] bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/c38a2d52-138e-48a3-ab68-36787ece46b3/eeb03fc9-99c6-438e-824d-32917ce55783/IN-en-20240101-popsignuptwoweeks-perspective_alpha_website_large.jpg')]">
+   <div className="landingpage-container w-[1519px]">
+     <div className=" bg-center bg-cover w-[100%] h-[630px] bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/c38a2d52-138e-48a3-ab68-36787ece46b3/eeb03fc9-99c6-438e-824d-32917ce55783/IN-en-20240101-popsignuptwoweeks-perspective_alpha_website_large.jpg')]">
      
       
       <div className=" w-[100%] h-[100%] bg-gradient-to-t from-[rgba(0,0,0,0.8)] via-[rgba(0,0,0,0.4)] to-[rgba(0,0,0,0.8)]">
-        <Header />
+       {/**<Header /> */} 
         <div className=" flex  absolute mt-[250px] justify-center w-[100%]">
           <div className=" text-white  text-center ">
             <div>
@@ -44,7 +44,7 @@ import Header from "./Header"
       </div>
       
      </div>
-    <div className=" divider w-[1381px] h-[8px] bg-[rgb(35,35,35)]"></div>
+    <div className=" divider w-[100%] h-[8px] bg-[rgb(35,35,35)]"></div>
     <LandingPageComp1 />
     <LandingPageComp2 />
     <LandingPageComp3 />
