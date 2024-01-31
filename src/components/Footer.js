@@ -2,8 +2,8 @@ import { IoLanguageOutline } from "react-icons/io5";
 const Footer = () => {
 
     return (
-        <div>
-            <div className=" pt-[50px] pb-[50px] w-[1381px] bg-black text-white">
+        <div className="">
+            <div className="pt-[50px] pb-[50px] w-[100%] bg-black text-white">
                 <div className=" w-[1061px] ml-[160px] mr-[160px]">
                     <div>Questions? Call 000-800-919-1694</div>
                     <div>
