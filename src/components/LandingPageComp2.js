@@ -2,7 +2,7 @@ const LandingPageComp2 = () => {
 
     return (
         <div className="">
-            <div className=" container-comp2 bg-black text-white  w-[1381px] h-[538px] pt-[50px] pb-[50px]">
+            <div className=" container-comp2 bg-black text-white  w-[100%] h-[538px] pt-[50px] pb-[50px]">
                 <div className=" w-[1061px] h-[438px]  ml-[160px] mr-[160px] flex">
                     <div className="w-[525px] relative">
                        <img className=" h-[434px] absolute" alt="" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" data-uia="nmhp-card-animation-asset-image" class="default-ltr-cache-1d3w5wq" />

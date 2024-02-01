@@ -2,7 +2,7 @@ const LandingPageComp1 = () => {
 
     return (
         <div className="  text-white">
-          <div className="container-comp1 bg-black w-[1381px] h-[538px] pt-[50px] pb-[50px]" >
+          <div className="container-comp1 bg-black w-[100%] h-[538px] pt-[50px] pb-[50px]" >
            <div className=" w-[1061px] h-[438px]  ml-[160px] mr-[160px] flex">
               <div className=" w-[525px] pr-[12px] pt-[154px] pb-[154px]">
                  <h1 className=" text-[43px] font-extrabold">Enjoy on your TV</h1>
