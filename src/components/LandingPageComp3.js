@@ -2,7 +2,7 @@ const LandingPageComp3 = () => {
 
     return (
         <div>
-            <div className=" text-white container-comp3 bg-black w-[1381px] h-[538px] pt-[50px] pb-[50px]">
+            <div className=" text-white container-comp3 bg-black w-[100%] h-[538px] pt-[50px] pb-[50px]">
                 <div className=" w-[1061px] h-[438px] ml-[160px] mr-[160px] flex">
                     <div className="w-[525px] h-[168px] pb-[24px] mt-[115px]">
                         <h1 className="text-[43px] font-extrabold">Watch everywhere</h1>
