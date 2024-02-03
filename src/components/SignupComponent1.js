@@ -4,7 +4,7 @@ import SignupFooter from "./signup/SignupFooter"
 import { EmailValidation, PasswordValidation } from "../utils/Validation"
 import {  useRef, useState} from "react"
 import { createUserWithEmailAndPassword } from "firebase/auth"
-import { auth } from "../utils/Firebase"
+import { auth, updateProfileOnSignup } from "../utils/Firebase"
 import { useDispatch } from "react-redux"
 import { addUser } from "../utils/UserSlice"
 
@@ -44,8 +44,9 @@ const SignupComponent1 = () => {
         const user = userCredential.user;
         console.log(user)
        // navigate("/browse")
-        dispatch(addUser(user)) 
-       
+        dispatch(addUser(user.email)) 
+        updateProfileOnSignup(user)
+        
         // ...
     })
     .catch((error) => {
