@@ -21,7 +21,7 @@ const Applayout = () => {
   return(
     
       <div className="app">
-        <Header />
+        <Header/>
         <Outlet/>
       </div> 
     

@@ -1,4 +1,4 @@
-//import Header from "./Header"
+ //import Header from "./Header"
  import LandingPageComp1 from "./LandingPageComp1";
  import LandingPageComp2 from "./LandingPageComp2";
  import LandingPageComp3 from "./LandingPageComp3";
@@ -14,7 +14,7 @@
      
       
       <div className=" w-[100%] h-[100%] bg-gradient-to-t from-[rgba(0,0,0,0.8)] via-[rgba(0,0,0,0.4)] to-[rgba(0,0,0,0.8)]">
-       {/**<Header /> */} 
+       
         <div className=" flex  absolute mt-[250px] justify-center w-[100%]">
           <div className=" text-white  text-center ">
             <div>
