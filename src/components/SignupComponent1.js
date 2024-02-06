@@ -7,6 +7,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth"
 import { auth, updateProfileOnSignup } from "../utils/Firebase"
 import { useDispatch } from "react-redux"
 import { addUser } from "../utils/UserSlice"
+import Header from "./Header"
 
 
 const SignupComponent1 = () => {
