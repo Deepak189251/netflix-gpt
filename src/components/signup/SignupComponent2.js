@@ -7,7 +7,7 @@ const SignupComponent2 = () => {
     //const [click, setClick] = useState()
 
     return (
-        <div className=" absolute w-[1380px]">
+        <div className=" absolute w-[1519px]">
             <SignupHeader />
             <div className=" w-[1080px] mx-[140px] mt-[50px]">
                 <div className=" ">
