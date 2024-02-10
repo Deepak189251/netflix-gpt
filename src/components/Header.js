@@ -8,8 +8,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/UserSlice";
 import { Netflix_Logo } from "../utils/Constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faCaretDown, faCaretUp, faHouse } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
+import { toggleGpt } from "../utils/GptSearchSlice";
+import { SupportedLanguage } from "../utils/Constants";
+import { toggleLanguage } from "../utils/ConfigSlice";
+import { lang } from "../utils/LanguageConstants";
+
 
 
 
@@ -18,9 +23,14 @@ const Header = () => {
   const dispatch = useDispatch()
   const user = useSelector((store) => store.user)
   const [input, setInput] = useState(false)
-  const [userImg, setUserImg] = useState()
-
-
+  const [userImg, setUserImg] = useState("https://wallpapers.com/images/high/netflix-profile-pictures-5yup5hd2i60x7ew3.webp")
+  const [userName, setUserName] = useState('User')
+  const [color, setColor] = useState(false)
+  const colorT = " w-[100%] h-[70px] bg-black fixed z-[30] "
+  const colorF = " w-[100%] h-[70px]  bg-gradient-to-b from-black to-transparent fixed z-[30]"
+  const gptToggleValue = useSelector(store => store?.gptSearch?.gptValue)
+  const selectedLanguage = useSelector(store => store?.config?.preferedLanguage)
+  
   const handleClick = () => {
 
     navigate("/login")
@@ -51,8 +61,30 @@ const Header = () => {
 
   }
   
+  const changeHeaderBg = () => {
 
- 
+    if(window.scrollY >= 70){
+
+      setColor(true)
+     
+    }
+    else {
+      setColor(false)
+      
+    } 
+  } 
+
+  window.addEventListener('scroll', changeHeaderBg)
+
+ /* const handleGptToggle = () => {
+
+    dispatch(toggleGpt())
+  }*/
+
+  const handleToggleLanguage = (res) => {
+
+    dispatch(toggleLanguage(res.target.value))
+  }
 
   
   useEffect(() => {
@@ -66,6 +98,7 @@ const Header = () => {
         dispatch(addUser(user.email))
         navigate("/browse")
         user?.photoURL && setUserImg(user?.photoURL)
+        user?.displayName && setUserName(user?.displayName)
        
         // ...
       } else {
@@ -73,6 +106,7 @@ const Header = () => {
         // ...
         dispatch(removeUser())
         navigate("/")
+        setUserImg("https://wallpapers.com/images/high/netflix-profile-pictures-5yup5hd2i60x7ew3.webp")
         
       }
     });
@@ -80,13 +114,14 @@ const Header = () => {
     return () => Unsubscribe()
   }, [])
 
+  console.log(lang[selectedLanguage].signinBtn)
 
   if(user) 
-    
+     
    return(
      
-    <div className=" w-[100%] h-[70px]">
-       <div className=" w-[100%] h-[100%] pr-[60px] pl-[50px] bg-black flex">
+    <div   className={color ? colorT : colorF}>
+       <div className=" w-[100%] h-[100%] pr-[60px] pl-[50px]  flex  ">
           <img className=" w-[117px] h-[58px] pt-[8px] mr-[35px]" src={Netflix_Logo} alt="logo" />
           <div className=" w-[100%] flex justify-between">
 
@@ -100,22 +135,20 @@ const Header = () => {
             </div>
               
             <div className=" flex">
-              <div className=" mt-[17px] border border-[1px]-white h-[35px] pt-[3px] pl-[6px]">
-                <form>
-                  <input type="text" placeholder="Titles,people,genres" className="bg-black border-none outline-none text-white"></input>
-                  <Link to={"#"}><button onSubmit={(e) => (e.preventDefault)} type="submit"><FontAwesomeIcon icon={faMagnifyingGlass} color="white" className=" mr-[5px] w-[25px] mt-[1px]" /></button></Link>
-                </form>
+              <div className=" mt-[17px] h-[35px] pt-[3px] pl-[6px]">
+                <button onClick={((res) => dispatch(toggleGpt(res.target.value)))}>{gptToggleValue ? <FontAwesomeIcon icon={faHouse} color="white" className=" mr-[5px] w-[28px] h-[21px] mt-[5px]"/> : <FontAwesomeIcon icon={faMagnifyingGlass} color="white" className=" mr-[5px] w-[28px] h-[21px] mt-[5px]" />}</button>
               </div>
-
-              <FontAwesomeIcon icon={faBell} color="white" className=" mt-[25px] ml-[20px] w-[20px] h-[20px]"/>
+              
+              <FontAwesomeIcon icon={faBell} color="white" className=" mt-[25px] ml-[20px] w-[24px] h-[22px] mr-[5px]"/>
 
               <div className="flex mt-[23px]" onMouseEnter={() => setInput(true)} onMouseLeave={() => setInput(false)}>
-                <img alt="user-icon" className="w-[26px] h-[26px] ml-[20px] mr-[8px] rounded " src={userImg} />
+                <img alt="user-icon" className="w-[28px] h-[28px] ml-[20px] mr-[8px] rounded " src={userImg} />
                 {input
                  ?
                   <span><FontAwesomeIcon icon={faCaretUp} color="white" /> 
-                    <div className="w-[218px] h-[251px] bg-black absolute right-[50px] top-[71px] border-[2px] border-transparent z-[1] text-white">
-                      <p className="pl-[10px] mt-[30px] mb-[10px] flex cursor-pointer hover:underline"> 
+                    <div className="w-[218px] h-[251px] bg-black absolute right-[50px] top-[71px] border-[2px] border-transparent z-40 text-white">
+                      <p className="pl-[20px] mt-[10px] mb-[10px] text-lg font-semibold">{userName}</p>
+                      <p className="pl-[10px] mt-[20px] mb-[10px] flex cursor-pointer hover:underline"> 
                         <svg className="w-[24px] h-[24px] mr-[15px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-mirrorinrtl="true" ><path fill-rule="evenodd" clip-rule="evenodd" d="M19.1213 1.7071C17.9497 0.535532 16.0503 0.53553 14.8787 1.7071L13.2929 3.29289L12.5858 4L1.58579 15C1.21071 15.3751 1 15.8838 1 16.4142V21C1 22.1046 1.89543 23 3 23H7.58579C8.11622 23 8.62493 22.7893 9 22.4142L20 11.4142L20.7071 10.7071L22.2929 9.12132C23.4645 7.94975 23.4645 6.05025 22.2929 4.87868L19.1213 1.7071ZM15.5858 7L14 5.41421L3 16.4142L3 19C3.26264 19 3.52272 19.0517 3.76537 19.1522C4.00802 19.2527 4.2285 19.4001 4.41421 19.5858C4.59993 19.7715 4.74725 19.992 4.84776 20.2346C4.94827 20.4773 5 20.7374 5 21L7.58579 21L18.5858 10L17 8.41421L6.70711 18.7071L5.29289 17.2929L15.5858 7ZM16.2929 3.12132C16.6834 2.73079 17.3166 2.73079 17.7071 3.12132L20.8787 6.29289C21.2692 6.68341 21.2692 7.31658 20.8787 7.7071L20 8.58578L15.4142 4L16.2929 3.12132Z" fill="currentColor"></path></svg>
                         Manage profiles
                       </p> 
@@ -134,7 +167,7 @@ const Header = () => {
                         Help Center
                       </p> 
                       <hr></hr>
-                      <button className=" hover:underline ml-[35px] mt-[20px]" onClick={handleSignout}>Sign out of Netflix</button>
+                      <button className=" hover:underline ml-[35px] mt-[10px]" onClick={handleSignout}>Sign out of Netflix</button>
                     </div>
                   </span> 
                 : 
@@ -155,17 +188,16 @@ const Header = () => {
           </div>
           <div className="signin-container mr-[170px] mt-[25px] flex">
             <div className=" justify-between relative ">
-              <IoLanguageOutline className="text-white absolute top-[5px] left-[5px] pl-[5px]" />
-              <select className=" bg-[rgb(45,45,45)] text-white pl-[22px] border border-1px-white  mr-[22px] text-sm rounded  pb-[5px] pr-[8px] pt-[2px]">
+              <IoLanguageOutline className="text-white mt-[3px] absolute top-[5px] left-[5px] pl-[5px]" />
+              <select onChange={handleToggleLanguage} className=" bg-[rgb(45,45,45)] text-white pl-[22px] border border-1px-white  mr-[22px] text-sm rounded h-[36px]  pb-[5px] pr-[8px] pt-[3px]">
+                {SupportedLanguage.map(e => <option  key={e.identifier} value={e.identifier} className=" bg-white">{e.name}</option>)}
                 
-                <option className=" bg-white">English </option>
-                <option className=" bg-white">Hindi </option>
               </select> 
             </div>
                {/**             <svg className=" text-white absolute top-[5px] left-[5px] pl-[5px]" alt="" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.7668 5.33333L10.5038 5.99715L9.33974 8.9355L8.76866 10.377L7.33333 14H9.10751L9.83505 12.0326H13.4217L14.162 14H16L12.5665 5.33333H10.8278H10.7668ZM10.6186 9.93479L10.3839 10.5632H11.1036H12.8856L11.6348 7.2136L10.6186 9.93479ZM9.52722 4.84224C9.55393 4.77481 9.58574 4.71045 9.62211 4.64954H6.41909V2H4.926V4.64954H0.540802V5.99715H4.31466C3.35062 7.79015 1.75173 9.51463 0 10.4283C0.329184 10.7138 0.811203 11.2391 1.04633 11.5931C2.55118 10.6795 3.90318 9.22912 4.926 7.57316V12.6667H6.41909V7.51606C6.81951 8.15256 7.26748 8.76169 7.7521 9.32292L8.31996 7.88955C7.80191 7.29052 7.34631 6.64699 6.9834 5.99715H9.06968L9.52722 4.84224Z" fill="currentColor"></path></svg>
   */}
     
-            <button onClick={handleClick} className=" rounded text-xs px-[12px] py-[6px] text-white w-[70px] font-semibold bg-red-600 h-[30px] hover:bg-[rgb(193,17,25)] duration-300">Sign In</button> 
+            <button onClick={handleClick} className=" rounded text-xs px-[12px] py-[3px] text-white w-[70px] font-semibold bg-red-600 h-[38px] hover:bg-[rgb(193,17,25)] duration-300">{lang[selectedLanguage].signinBtn}</button>
           </div>
        </div>
     ) 
