@@ -5,9 +5,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      radialGradientColors: {
-        'custom': ['circle', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.8)']
-      }
+     
     },
   },
   plugins: [],
