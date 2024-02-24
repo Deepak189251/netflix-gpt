@@ -29,3 +29,5 @@ export const SupportedLanguage = [
   }
   
 ]
+
+export const OpenAi_Key = "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"
