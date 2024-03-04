@@ -1,17 +1,18 @@
-import { Link, useNavigate} from "react-router-dom"
+import { Link} from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGlobe } from "@fortawesome/free-solid-svg-icons"
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../utils/Firebase"
 import { useRef } from "react"
-import { useDispatch } from "react-redux"
-import { addUser } from "../utils/UserSlice"
+//import Header from "./Header"
+//import { useDispatch } from "react-redux"
+//import { addUser } from "../utils/UserSlice"
 //import { UserState } from "../utils/Context"
 
 const Login = () => {
-   const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   //const {state:{users}, dispatch} = UserState()
-  const navigate = useNavigate()
+  //const navigate = useNavigate()
    const Email = useRef(null);
    const Password = useRef(null);
    
@@ -31,8 +32,8 @@ const Login = () => {
             }) */
             
            // console.log(user)
-            navigate("/browse")
-            dispatch(addUser()) 
+           // navigate("/browse")
+           // dispatch(addUser(user)) 
            
             console.log(user)
 
@@ -58,7 +59,7 @@ const Login = () => {
       <div>
         <div className=" w-[100%]  h-[958px] bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/c906271d-7184-4eec-83c9-b6d4c1a068ec/728874a6-eeda-400a-9bcf-a935a1408a4f/IN-en-20231127-popsignuptwoweeks-perspective_alpha_website_large.jpg')]">
            <div className=" w-[100%] h-[100%] bg-gradient-to-t from-[rgba(0,0,0,0.7)] via-[rgba(0,0,0,0.4)] to-[rgba(0,0,0,0.7)]">
-            
+           
              <div className=" absolute w-[430px] top-[140px] h-[660] px-[68px] py-[60px] left-[560px] bg-[rgba(0,0,0,.75)] rounded-sm">
                 <div className="   text-white">
                    <h1 className=" text-[30px] font-medium mb-[28px]">Sign In</h1>
