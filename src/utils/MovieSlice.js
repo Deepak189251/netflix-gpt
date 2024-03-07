@@ -8,7 +8,8 @@ const MovieSlice = createSlice({
         movieTrailer: null,
         topRatedMovie: null,
         upComingMovie: null,
-        popularMovie: null
+        popularMovie: null,
+    
         
     },
 
