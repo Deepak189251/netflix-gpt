@@ -10,6 +10,9 @@ export const popularMovieUrl = 'https://api.themoviedb.org/3/movie/popular?langu
 
 export const upcomingMovieUrl = 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1'
 
+export const searchMovieUrl = 'https://api.themoviedb.org/3/search/movie?query=Raaz&include_adult=false&language=en-US&page=1' 
+
+
 export const options = {
     method: 'GET',
     headers: {
@@ -30,4 +33,4 @@ export const SupportedLanguage = [
   
 ]
 
-export const OpenAi_Key = "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"
+export const OpenAi_Key = "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"
