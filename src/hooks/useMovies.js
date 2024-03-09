@@ -94,3 +94,12 @@ export const usePopularMovies = () => {
     },[])
     
 }
+/*
+export const useSearchMovies = async (movie, date) => {
+    const data = await fetch('https://api.themoviedb.org/3/search/movie?query=' + movie + '&include_adult=false&language=en-US&primary_release_year=' + date + 'page=1&' , options)
+    const json = await data.json()
+    //console.log(json)
+
+    return json.results
+
+}*/
