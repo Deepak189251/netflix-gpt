@@ -36,13 +36,14 @@ const Browse = () => {
 
          ? 
 
-      <GptSuggestion />  
+         <GptSuggestion />  
 
          : 
-      <>
-       <PrimaryContainer />
-       <SecondaryContainer />
-      </>}
+         <>
+            <PrimaryContainer />
+            <SecondaryContainer />
+        </>
+      }
           
          
         
