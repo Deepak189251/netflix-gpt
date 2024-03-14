@@ -1,9 +1,11 @@
 import { nowMovieUrl, options, popularMovieUrl, topRatedMovieUrl, upcomingMovieUrl } from "../utils/Constants"
 import { useEffect } from "react"
-import { useDispatch} from "react-redux"
+import { useDispatch, useSelector} from "react-redux"
 import { addNowMovie, addPopularMovie, addTopRatedMovie, addUpcomingMovie } from "../utils/MovieSlice"
 
 export  const useNowMovies = () => {
+
+    const movies = useSelector(store => store.movie.nowMovie)
 
     const dispatch = useDispatch()
 
@@ -18,7 +20,7 @@ export  const useNowMovies = () => {
 
     useEffect(() => {
 
-        getNowPlayingMovies()
+       if(!movies) getNowPlayingMovies()
 
     },[])
     
@@ -28,6 +30,8 @@ export  const useNowMovies = () => {
 
 
 export const useTopRatedMovies = () => {
+
+    const movies = useSelector(store => store.movie.topRatedMovie)
 
     const dispatch = useDispatch()
 
@@ -51,6 +55,7 @@ export const useTopRatedMovies = () => {
 
 export const useUpcomingMovies = () => {
 
+    const movies = useSelector(store => store.movie.upComingMovie)
     const dispatch = useDispatch()
 
     const getTopRatedMovies = async () => {
@@ -74,6 +79,7 @@ export const useUpcomingMovies = () => {
 
 export const usePopularMovies = () => {
 
+    const movies = useSelector(store => store.movie.popularMovie)
     const dispatch = useDispatch()
 
     const getTopRatedMovies = async () => {
