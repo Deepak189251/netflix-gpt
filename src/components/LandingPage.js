@@ -32,14 +32,14 @@ import { lang } from "../utils/LanguageConstants";
             <div className=" text-white mt-[16px]" >
               <p className=" text-xl font-normal">{lang[selectedLanguage].landingHeader3}</p>
              
-              <form className=" flex justify-between mt-[13px]">
+              <form className=" flex mt-[13px] justify-center">
              
                  
                  <div className="">
                     <input type="email" className=" mb-[5px]  bg-black w-[374px] h-[56px] text-white-[20px] border rounded text-left pb-2 pl-3" placeholder="Email address"></input>
                  </div>  
             
-               <Link to={"/signup-form"}><button type="submit" className=" bg-red-600 w-[203px] h-[56px] mr-[180px] text-2xl font-semibold rounded text-left pl-3 flex pt-2 hover:bg-[rgb(193,17,25)] duration-300">{lang[selectedLanguage].signupBtn}<SlArrowRight className=" pl-[10px] pt-[6px] text-3xl font-extrabold"/> </button></Link> 
+               <Link to={"/signup-form"}><button type="submit" className=" bg-red-600 w-[203px] h-[56px] ml-[10px] text-2xl font-semibold rounded text-left pl-3 flex pt-2 hover:bg-[rgb(193,17,25)] duration-300">{lang[selectedLanguage].signupBtn}<SlArrowRight className=" pl-[10px] pt-[6px] text-3xl font-extrabold"/> </button></Link> 
               </form>
             </div>
          </div>
