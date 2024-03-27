@@ -46,8 +46,8 @@ export const useTopRatedMovies = () => {
     }
 
     useEffect(() => {
-
-        getTopRatedMovies()
+       
+      if(!movies) getTopRatedMovies()
 
     },[])
     
@@ -71,7 +71,7 @@ export const useUpcomingMovies = () => {
 
     useEffect(() => {
 
-        getTopRatedMovies()
+      if(!movies)  getTopRatedMovies()
 
     },[])
     
@@ -95,7 +95,7 @@ export const usePopularMovies = () => {
 
     useEffect(() => {
 
-        getTopRatedMovies()
+       if(!movies) getTopRatedMovies()
 
     },[])
     
