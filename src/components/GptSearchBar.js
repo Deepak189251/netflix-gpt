@@ -34,20 +34,6 @@ const GptSearch = () => {
         console.log(chatCompletion)
        // const names = []
         const moviePromiseArray = result.map((movie) => {
-            //console.log(movie)
-             
-           // console.log(movie.indexOf(" "))
-          /* if(movie.indexOf(" ") === 0){
-            if(movie.length)
-            let name = movie.slice(1)
-            getSearchMovies(name.slice(0, name.indexOf(" ")), name.slice(name.indexOf(" ") + 1))
-            if(movie.charAt(movie.length - 1) === ")") {
-                name = movie.slice(0, movie.length - 6)
-                year = movie.slice(movie.length - 6)
-                let name = movie.slice(0, movie.length - 4)
-            let year = movie.slice(movie.length - 4)
-            }
-            */
             let name 
             let year  
 
