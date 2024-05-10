@@ -5,7 +5,7 @@ const LandingPageComp1 = () => {
           <div className="container-comp1 bg-black w-[100%] h-auto pt-[50px] pb-[50px]" >
            <div className="  md:flex sm:flex-row sm:justify-between md:justify-center ">
               <div className=" xl:w-[525px] lg:w-[420px] md:w-[330px] md:pr-[12px] md:pt-[154px] md:pb-[154px] mx-[15px] text-center">
-                 <h1 className=" xl:text-[43px] lg:text-[40px] text-[35px]  font-extrabold">Enjoy on your TV</h1>
+                 <h1 className=" xl:text-[43px] lg:text-[40px] text-[35px]  sm:font-extrabold font-bold mb-[10px]">Enjoy on your TV</h1>
                  <p className="lg:text-[22px] md:text-[19px] text-[17px] ">Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
              </div >
              <div className=" xl:w-[525px] lg:w-[420px] md:w-[330px] sm:w-[460px] sm:h-[350px] w-[330px] h-[290px]  md:pl-[10px] lg:bottom-[15px] md:bottom-[8px] bottom-[60px] md:m-0 m-auto  relative text-center ">
@@ -16,7 +16,7 @@ const LandingPageComp1 = () => {
              </div>
            </div> 
           </div>
-            <div className=" divider w-[1381px] h-[8px] bg-[rgb(35,35,35)]"></div>
+            <div className=" divider w-[100%] h-[8px] bg-[rgb(35,35,35)]"></div>
         </div>
     )
 }
