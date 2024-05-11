@@ -114,7 +114,7 @@ const Header = () => {
     return () => Unsubscribe()
   }, [])
 
-  console.log(lang[selectedLanguage].signinBtn)
+  //console.log(lang[selectedLanguage].signinBtn)
 
   if(user) 
      
@@ -183,7 +183,7 @@ const Header = () => {
     return (
    
        <div className=" absolute flex justify-between w-[100%]">
-          <div className="logo-container mt-[6px] md:mt-[0px] ml-[20px]  sm:ml-[40px] md:ml-[80px]  xl:ml-[140px] ">
+          <div className="logo-container mt-[6px] md:mt-[0px] ml-[10px]  sm:ml-[40px] md:ml-[80px]  xl:ml-[140px] ">
             <img className=" w-[125px] h-[65px] md:w-[180px] md:h-[80px]" src={Netflix_Logo} alt="logo" />
           </div>
           <div className="signin-container mt-[25px] flex mr-[20px] sm:mr-[40px] md:mr-[80px] xl:mr-[170px] ">
