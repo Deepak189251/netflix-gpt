@@ -16,7 +16,7 @@ const FAQ = (props) => {
 
     return (
         <div className="  mb-[10px] ">
-            <div className="accordian-question h-[84px] w-[100%] bg-[rgb(45,45,45)] flex justify-between text-[23px] font-medium pt-[24px] pl-[20px] hover:bg-[rgb(78,78,78)] duration-300" onClick={() => changeValue(index, value)}>
+            <div className="accordian-question lg:h-[84px] h-[60px] w-[100%] bg-[rgb(45,45,45)] flex justify-between sm:text-[23px] text-[20px] font-medium pl-[20px] hover:bg-[rgb(78,78,78)] duration-300 items-center" onClick={() => changeValue(index, value)}>
                 <div>{data.QUESTION}</div>
                 <div className=" pr-[20px] transition-transform duration-500">{value === true ? <FontAwesomeIcon icon={faX} /> : <FontAwesomeIcon icon={faPlus} />}</div>
             </div>
