@@ -4,32 +4,38 @@ const Footer = () => {
     return (
         <div className="">
             <div className="pt-[50px] pb-[50px] w-[100%] bg-black text-white">
-                <div className=" w-[1061px] ml-[160px] mr-[160px]">
+                <div className=" w-auto lg:px-[80px] px-[30px] flex flex-col">
                     <div>Questions? Call 000-800-919-1694</div>
-                    <div>
-                        <div className=" w-[100%]  text-[13px]  flex ">
-                            <h4 className=" w-[265px] text-[13px] font-normal mt-[16px]">FAQ</h4>
-                            <h4 className=" w-[265px] text-[13px] font-normal mt-[16px]">Help Centre</h4>
-                            <h4 className=" w-[265px] text-[13px] font-normal mt-[16px]">Account</h4>
-                            <h4 className=" w-[265px] text-[13px] font-normal mt-[16px]">Media Centre</h4>
+                    <div className=" flex md:flex-col flex-row justify-between">
+                        <div className=" flex flex-col md:block">
+                            <div className=" w-[100%]  text-[13px]  flex justify-between md:flex-row flex-col">
+                                <h4 className="sm:w-[150px] w-[140px] text-[13px] font-normal mt-[16px]">FAQ</h4>
+                                <h4 className="sm:w-[150px] w-[140px] font-normal mt-[16px]">Help Centre</h4>
+                                <h4 className="sm:w-[150px] w-[140px] font-normal mt-[16px]">Account</h4>
+                                <h4 className="sm:w-[150px] w-[140px] font-normal mt-[16px]">Media Centre</h4>
+                            </div>
+                            <div className=" w-[100%] flex justify-between md:flex-row flex-col">
+                                <h4 className="sm:w-[150px] w-[140px] text-[13px] font-normal mt-[16px]">Investor Relations</h4>
+                                <h4 className="sm:w-[150px] w-[140px] text-[13px] font-normal mt-[16px]">Jobs</h4>
+                                <h4 className="sm:w-[150px] w-[140px] text-[13px] font-normal mt-[16px]">Ways to Watch</h4>
+                                <h4 className="sm:w-[150px] w-[140px] text-[13px] font-normal mt-[16px]">Terms of Use</h4>
+                            </div>
                         </div>
-                        <div className=" w-[100%] flex ">
-                            <h4 className=" w-[265px] text-[13px] font-normal mt-[16px]">Investor Relations</h4>
-                            <h4 className=" w-[265px] text-[13px] font-normal mt-[16px]">Jobs</h4>
-                            <h4 className=" w-[265px] text-[13px] font-normal mt-[16px]">Ways to Watch</h4>
-                            <h4 className=" w-[265px] text-[13px] font-normal mt-[16px]">Terms of Use</h4>
+                        <div className=" flex flex-col md:block">
+                            <div className=" w-[100%] flex justify-between md:flex-row flex-col">
+                                <h4 className="sm:w-[150px] w-[140px] text-[13px] font-normal mt-[16px]">Privacy</h4>
+                                <h4 className="sm:w-[150px] w-[140px] text-[13px] font-normal mt-[16px]">Cookie Preferences</h4>
+                                <h4 className="sm:w-[150px] w-[140px] text-[13px] font-normal mt-[16px]">Corporate Information</h4>
+                                <h4 className="sm:w-[150px] w-[140px] text-[13px] font-normal mt-[16px]">Contact Us</h4>
+                            </div>
+                            <div className=" w-[100%] flex justify-between md:flex-row flex-col">
+                                <h4 className="sm:w-[150px] w-[140px] text-[13px] font-normal mt-[16px]">Speed Test</h4>
+                                <h4 className="sm:w-[150px] w-[140px] text-[13px] font-normal mt-[16px]">Legal Notices</h4>
+                                <h4 className="sm:w-[150px] w-[140px]  text-[13px] font-normal mt-[16px]">About us</h4>
+                                <h4 className="sm:w-[150px] w-[140px]  text-[13px] font-normal mt-[16px]">Only on Netflix</h4>
+                            </div>
                         </div>
-                        <div className=" w-[100%] flex ">
-                            <h4 className=" w-[265px] text-[13px] font-normal mt-[16px]">Privacy</h4>
-                            <h4 className=" w-[265px] text-[13px] font-normal mt-[16px]">Cookie Preferences</h4>
-                            <h4 className=" w-[265px] text-[13px] font-normal mt-[16px]">Corporate Information</h4>
-                            <h4 className=" w-[265px] text-[13px] font-normal mt-[16px]">Contact Us</h4>
-                        </div>
-                        <div className=" w-[100%] flex ">
-                            <h4 className=" w-[265px] text-[13px] font-normal mt-[16px]">Speed Test</h4>
-                            <h4 className=" w-[265px] text-[13px] font-normal mt-[16px]">Legal Notices</h4>
-                            <h4 className=" w-[265px] text-[13px] font-normal mt-[16px]">Only on Netflix</h4>
-                        </div>
+                      
                         
                     </div>
                     
