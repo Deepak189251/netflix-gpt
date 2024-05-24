@@ -1,10 +1,16 @@
-const MovieCard = ({poster}) => {
+import { Link } from "react-router-dom"
+
+const MovieCard = ({poster, id}) => {
      
+    
     if(!poster) return
+    
     return (
-        <div className=" mr-[20px]">
-            <img className="w-[200px] h-[170px] max-w-[200px]" alt="poster" src={`https://image.tmdb.org/t/p/w500/${poster}`} /> 
-        </div>
+        <Link to={`/movie/${id}`}>
+            <div className="">
+                <img className="w-[150px] h-[150px] max-w-[200px]" alt="poster" src={`https://image.tmdb.org/t/p/w500/${poster}`} /> 
+            </div>
+        </Link>
     )
 }
 
