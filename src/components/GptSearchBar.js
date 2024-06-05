@@ -21,7 +21,7 @@ const GptSearch = () => {
     const handleSearchClick = async () => {
         
        // const gptQuery = "act as a movie recommendation system and suggest some movie for the query :" + searchText.current.value + ". only give me names of 5 movies, comma seperated like the example result given ahead. Example Result: Gadar,Sholay,Don,Golmaal,KoiMilGaya"
-        const gptQuery = "act as a movie recommendation system and suggest some movie for the query :" + searchText.current.value + ". only give me names of 5 movies with it's release year, comma separated like the example result given ahead. Example Result: Gadar1990,pk2014"
+        const gptQuery = "act as a movie recommendation system and suggest some movie for the query :" + searchText.current.value + ". only give me names of 8 movies with it's release year, comma separated like the example result given ahead. Example Result: Gadar1990,pk2014"
 
         const chatCompletion = await openai.chat.completions.create({
             messages: [{ role: 'user', content: gptQuery }],
@@ -64,10 +64,10 @@ const GptSearch = () => {
     }
 
     return (
-        <div className=" w-[590px] ml-[240px] mb-[50px]">
+        <div className=" w-auto flex justify-center items-center">
             <form className=" flex justify-between" onSubmit={((e) => e.preventDefault())}>
                 <input className=" mb-[5px]  bg-black w-[374px] h-[56px] text-white text-[20px]  border rounded text-left pb-2 pl-3" type="text" placeholder="Search Movies..." ref={searchText} />
-                <button onClick={handleSearchClick} className=" bg-red-600 w-[203px] mb-[5px] h-[56px] font-semibold text-white rounded text-left text-3xl flex  hover:bg-[rgb(193,17,25)] duration-300 " type="submit"><span className=" rounded mt-[9px] ml-[55px]">Search</span></button>
+                <button onClick={handleSearchClick} className=" bg-red-600 w-[203px] mb-[5px] h-[56px] font-semibold text-white rounded text-left text-3xl flex  hover:bg-[rgb(193,17,25)] duration-300 ml-[10px]" type="submit"><span className=" rounded mt-[9px] ml-[55px]">Search</span></button>
             </form>
         </div>
     )
