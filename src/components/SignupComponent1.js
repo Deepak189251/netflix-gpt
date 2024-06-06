@@ -61,19 +61,19 @@ const SignupComponent1 = () => {
    }
 
     return (
-        <div className=" signup-container absolute w-[1519px] top-[100px]">
+        <div className=" signup-container absolute w-[100%] top-[140px]">
             
         
-        <div className="  flex  mb-[150px]">
+        <div className="  flex  md:mb-[150px] sm:mb-[120px] mb-[80px] w-[auto] justify-center items-center flex-col">
             
             
-            <div className=" ml-[470px] mr-[470px] w-[440px]">
             
-               
+            
+            <div className=" md:w-[440px] sm:w-[350px] w-[300px]"> 
             
                 <div  className="">
                     <p className=" text-xs ">STEP <span className=" font-medium">1</span> OF <span className=" font-medium">3</span></p>
-                    <p className=" text-[1.975rem]/[2.575rem] font-semibold ">Create a password to start your membership</p>
+                    <p className=" sm:text-[1.975rem]/[2.575rem] text-[28px] font-semibold ">Create a password to start your membership</p>
                     <p className="  text-[17px] mt-[10px]">Just a few more steps and you're done!</p>
                     <p className="">We hate paperwork, too.</p>
                 </div>
@@ -91,7 +91,7 @@ const SignupComponent1 = () => {
                   </form>
                 </div>
                 
-            </div>
+            </div>  
         </div>
         <SignupFooter/>
         </div>
