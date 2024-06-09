@@ -1,7 +1,7 @@
 import { nowMovieUrl, options, popularMovieUrl, topRatedMovieUrl, upcomingMovieUrl } from "../utils/Constants"
 import { useEffect } from "react"
 import { useDispatch, useSelector} from "react-redux"
-import { addMovieInfo, addNowMovie, addPopularMovie, addTopRatedMovie, addUpcomingMovie, removeMovieInfo } from "../utils/MovieSlice"
+import { addMovieCast, addMovieInfo, addNowMovie, addPopularMovie, addTopRatedMovie, addUpcomingMovie, removeMovieCast, removeMovieInfo } from "../utils/MovieSlice"
 
 export  const useNowMovies = () => {
 
@@ -108,8 +108,14 @@ export const usePopularMovies = () => {
             const url = 'https://api.themoviedb.org/3/movie/' + id + '?language=en-US'
             const data = await fetch(url, options) 
             const json = await data.json()
-            console.log(json)
             dispatch(addMovieInfo(json))
+        }
+
+        const getMovieCast = async () => {
+            const url = 'https://api.themoviedb.org/3/movie/'+ id +'/credits?language=en-US'
+            const data = await fetch (url, options)
+            const json = await data.json()
+            dispatch(addMovieCast(json))
         }
 
         const movieInfo = useSelector(store => store.movie.movieInfo)
@@ -117,11 +123,14 @@ export const usePopularMovies = () => {
         useEffect(() => {
             if(!movieInfo){
                 getMovieInfo()
+                getMovieCast()
             }
             else{
                 if(movieInfo.id !== id) {
                     dispatch(removeMovieInfo())
+                    dispatch(removeMovieCast())
                     getMovieInfo()
+                    getMovieCast()
                 }
             }
     
