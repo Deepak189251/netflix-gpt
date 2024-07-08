@@ -25,9 +25,9 @@ const Header = () => {
   const [input, setInput] = useState(false)
   const [userImg, setUserImg] = useState("https://wallpapers.com/images/high/netflix-profile-pictures-5yup5hd2i60x7ew3.webp")
   const [userName, setUserName] = useState('User')
-  const [color, setColor] = useState(false)
+ // const [color, setColor] = useState(false)
   const colorT = " w-[100%] h-[70px] bg-black fixed z-[30] "
-  const colorF = " w-[100%] h-[70px]  bg-gradient-to-b from-black to-transparent fixed z-[30]"
+ // const colorF = " w-[100%] h-[70px]  bg-gradient-to-b from-black to-transparent fixed z-[30]"
   const gptToggleValue = useSelector(store => store?.gptSearch?.gptValue)
   const selectedLanguage = useSelector(store => store?.config?.preferedLanguage)
   
@@ -61,7 +61,7 @@ const Header = () => {
 
   }
   
-  const changeHeaderBg = () => {
+/*  const changeHeaderBg = () => {
 
     if(window.scrollY >= 70){
 
@@ -72,9 +72,9 @@ const Header = () => {
       setColor(false)
       
     } 
-  } 
+  } */
 
-  window.addEventListener('scroll', changeHeaderBg)
+ // window.addEventListener('scroll', changeHeaderBg)
 
  /* const handleGptToggle = () => {
 
@@ -117,10 +117,12 @@ const Header = () => {
   //console.log(lang[selectedLanguage].signinBtn)
 
   if(user) 
+
+    // {color ? colorT : colorF}
      
    return(
      
-    <div   className={color ? colorT : colorF}>
+    <div   className={colorT}>
        <div className=" w-[100%] h-[100%] flex pr-[60px] pl-[50px]    ">
           <img className=" w-[117px] h-[58px] pt-[8px] mr-[35px]" src={Netflix_Logo} alt="logo" />
           <div className=" w-[100%] flex justify-between">
