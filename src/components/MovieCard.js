@@ -8,7 +8,7 @@ const MovieCard = ({poster, id}) => {
     return (
         <Link to={`/movie/${id}`}>
             <div className="">
-                <img className="w-[150px] h-[150px] max-w-[200px]" alt="poster" src={`https://image.tmdb.org/t/p/w500/${poster}`} /> 
+                <img className="w-[150px] h-[150px] max-w-[200px] mr-[15px]" alt="poster" src={`https://image.tmdb.org/t/p/w500/${poster}`} />  
             </div>
         </Link>
     )
