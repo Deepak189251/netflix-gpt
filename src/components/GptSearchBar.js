@@ -7,14 +7,16 @@ import { useDispatch } from "react-redux"
 const GptSearch = () => {
 
     const searchText = useRef(null)
+    const searchDate = useRef(null)
     const dispatch = useDispatch()
 
-    const getSearchMovies = async (movie, date) => {
-        const data = await fetch('https://api.themoviedb.org/3/search/movie?query=' + movie + '&include_adult=false&language=en-US&primary_release_year=' + date + 'page=1&' , options)
+    const getSearchMovies = async () => {
+        const data = await fetch('https://api.themoviedb.org/3/search/movie?query=' + searchText.current.value + '&include_adult=false&language=en-US&primary_release_year=' + searchDate.current.value + 'page=1&' , options)
         const json = await data.json()
         //console.log(json)
-
-        return json.results
+        
+        dispatch(addGptMovies({name: searchText.current.value , result: json}))
+        
         
     }
 
@@ -67,7 +69,8 @@ const GptSearch = () => {
         <div className=" w-auto flex justify-center items-center">
             <form className=" flex justify-between" onSubmit={((e) => e.preventDefault())}>
                 <input className=" mb-[5px]  bg-black w-[374px] h-[56px] text-white text-[20px]  border rounded text-left pb-2 pl-3" type="text" placeholder="Search Movies..." ref={searchText} />
-                <button onClick={handleSearchClick} className=" bg-red-600 w-[203px] mb-[5px] h-[56px] font-semibold text-white rounded text-left text-3xl flex  hover:bg-[rgb(193,17,25)] duration-300 ml-[10px]" type="submit"><span className=" rounded mt-[9px] ml-[55px]">Search</span></button>
+                <input className=" bg-black rounded text-white" type="number" ref={searchDate} />
+                <button onClick={getSearchMovies} className=" bg-red-600 w-[203px] mb-[5px] h-[56px] font-semibold text-white rounded text-left text-3xl flex  hover:bg-[rgb(193,17,25)] duration-300 ml-[10px]" type="submit"><span className=" rounded mt-[9px] ml-[55px]">Search</span></button>
             </form>
         </div>
     )
