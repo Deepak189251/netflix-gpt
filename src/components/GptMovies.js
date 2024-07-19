@@ -7,7 +7,7 @@ const GptMovies = () => {
 
 
     return (
-        <div className=" flex justify-between items-center overflow-x-scroll px-[20px]">
+        <div className=" flex items-center flex-wrap ">
            {gptMovieResults?.results?.map((movie) => <MovieCard key={movie?.id} id={movie?.id} poster={movie?.poster_path}/>)}
         </div>
     )
