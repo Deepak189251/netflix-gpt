@@ -2,7 +2,7 @@
 //import { useDispatch } from "react-redux"
 //import { removeUser } from "../utils/UserSlice"
 //import { UserState } from "../utils/Context"
-import { useSelector } from "react-redux"
+//import { useSelector } from "react-redux"
 //import { signOut } from "firebase/auth"
 //import { auth } from "../utils/Firebase"
 //import { nowPlayingUrl, options } from "../utils/Constants"
@@ -11,7 +11,7 @@ import { useSelector } from "react-redux"
 //import Header from "./Header"
  import PrimaryContainer from "./PrimaryContainer"
 import SecondaryContainer from "./SecondaryContainer"
-import GptSuggestion from "./GptSuggestion"
+//import GptSuggestion from "./GptSuggestion"
 
 
 const Browse = () => {
@@ -24,7 +24,7 @@ const Browse = () => {
    useTopRatedMovies()
    useUpcomingMovies()
    usePopularMovies()
-   const gptValue = useSelector(store => store.gptSearch.gptValue)
+   //const gptValue = useSelector(store => store.gptSearch.gptValue)
     
    
 
@@ -32,23 +32,13 @@ const Browse = () => {
     return (
     <div className="  w-[100%] h-[100%] bg-[#141414]">
 
-      { gptValue 
-
-         ? 
-
-         <GptSuggestion />  
-
-         : 
+      
          <>
             <PrimaryContainer />
             <SecondaryContainer />
         </>
-      }
+      
           
-         
-        
-
-       
     </div>)
 }
 
