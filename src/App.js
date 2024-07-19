@@ -15,6 +15,7 @@ import MovieInfo from "./components/MovieInfo";
 //import UserContext from "./utils/Context";
 //import { UserState } from "./utils/Context";
 //import ProtectedRoute from "./utils/ProtectedRoute";
+import GptSuggestion from "./components/GptSuggestion";
 const Applayout = () => {
 
 
@@ -65,6 +66,10 @@ function App() {
         {
           path: "/movie/:resId",
           element: <MovieInfo/>
+        },
+        {
+          path: "/search",
+          element: <GptSuggestion/>
         }
       ]
     },
