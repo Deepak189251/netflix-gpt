@@ -12,7 +12,12 @@
  import PrimaryContainer from "./PrimaryContainer"
 import SecondaryContainer from "./SecondaryContainer"
 //import GptSuggestion from "./GptSuggestion"
+import { doc, getDoc } from "firebase/firestore";
 
+export const ReadData = async () => {
+
+    
+}
 
 const Browse = () => {
    // const navigate = useNavigate()
@@ -27,6 +32,7 @@ const Browse = () => {
    //const gptValue = useSelector(store => store.gptSearch.gptValue)
     
    
+
 
     
     return (
