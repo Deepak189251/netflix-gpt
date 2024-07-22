@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux"
 import MovieCard from "./MovieCard"
+
 const GptMovies = () => {
 
  const {gptMovieNames, gptMovieResults} = useSelector(store => store.gptSearch)
- if(!gptMovieResults) return
+ if(!gptMovieResults) return 
 
 
     return (
