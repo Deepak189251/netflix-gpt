@@ -10,7 +10,7 @@ import { Netflix_Logo } from "../utils/Constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faCaretDown, faCaretUp, faHouse } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
-import { toggleGpt } from "../utils/GptSearchSlice";
+//import { toggleGpt } from "../utils/GptSearchSlice";
 import { SupportedLanguage } from "../utils/Constants";
 import { toggleLanguage } from "../utils/ConfigSlice";
 import { lang } from "../utils/LanguageConstants";
@@ -28,7 +28,7 @@ const Header = () => {
  // const [color, setColor] = useState(false)
   const colorT = " w-[100%] h-[70px] bg-black fixed z-[30] "
  // const colorF = " w-[100%] h-[70px]  bg-gradient-to-b from-black to-transparent fixed z-[30]"
-  const gptToggleValue = useSelector(store => store?.gptSearch?.gptValue)
+ // const gptToggleValue = useSelector(store => store?.gptSearch?.gptValue)
   const selectedLanguage = useSelector(store => store?.config?.preferedLanguage)
   
   const handleClick = () => {
@@ -94,9 +94,10 @@ const Header = () => {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/auth.user
         //const uid = user.uid;
-       // console.log(user)
-        dispatch(addUser(user.email))
+        console.log(user)
+        dispatch(addUser({email:user.email, uid:user.uid}))
         navigate("/browse")
+        
         user?.photoURL && setUserImg(user?.photoURL)
         user?.displayName && setUserName(user?.displayName)
        
@@ -121,7 +122,7 @@ const Header = () => {
     // {color ? colorT : colorF}
      
    return(
-     
+     /** This header is for LogedIn users */
     <div   className={colorT}>
        <div className=" w-[100%] h-[100%] flex pr-[60px] pl-[50px]    ">
           <img className=" w-[117px] h-[58px] pt-[8px] mr-[35px]" src={Netflix_Logo} alt="logo" />
@@ -138,7 +139,7 @@ const Header = () => {
               
             <div className=" flex">
               <div className=" mt-[17px] h-[35px] pt-[3px] pl-[6px]">
-                <button onClick={((res) => dispatch(toggleGpt(res.target.value)))}>{gptToggleValue ? <FontAwesomeIcon icon={faHouse} color="white" className=" mr-[5px] w-[28px] h-[21px] mt-[5px]"/> : <FontAwesomeIcon icon={faMagnifyingGlass} color="white" className=" mr-[5px] w-[28px] h-[21px] mt-[5px]" />}</button>
+                <Link to={"/search"}><FontAwesomeIcon icon={faMagnifyingGlass} color="white" className=" mr-[5px] w-[28px] h-[21px] mt-[5px]" /></Link>
               </div>
               
               <FontAwesomeIcon icon={faBell} color="white" className=" mt-[25px] ml-[20px] w-[24px] h-[22px] mr-[5px]"/>
@@ -183,7 +184,9 @@ const Header = () => {
   )
     
     return (
-   
+    
+      /** This header is for new users */
+
        <div className=" absolute flex justify-between w-[100%]">
           <div className="logo-container mt-[6px] md:mt-[0px] ml-[10px]  sm:ml-[40px] md:ml-[80px]  xl:ml-[140px] ">
             <img className=" w-[125px] h-[65px] md:w-[180px] md:h-[80px]" src={Netflix_Logo} alt="logo" />
