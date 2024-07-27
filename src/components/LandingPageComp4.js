@@ -9,7 +9,7 @@ const LandingPageComp4 = () => {
                     </div>
                     <div className="xl:w-[525px] lg:w-[472px] md:w-[420px] sm:w-[440px] w-[310px] md:pl-[6px] pl-0 xl:h-[199px] sm:h-[180px] h-[235px] text-center">
                         <h1 className=" xl:text-[43px] lg:text-[41px] sm:text-[37px] text-[30px] lg:font-extrabold font-bold ">Create profiles for kids</h1>
-                        <p className="text-[21px] font-medium pt-[16px]">Send children on adventures with their favourite characters in a space made just for them free with your membership.</p>
+                        <p className="text-[21px] font-medium pt-[16px]">Send children on adventures with their favourite characters in a space made just for them   free with your membership.</p>
                     </div>
                 </div>
 
