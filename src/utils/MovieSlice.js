@@ -11,7 +11,8 @@ const MovieSlice = createSlice({
         popularMovie: null,
         movieInfo: null,
         movieCast: null,
-        movieClip: null
+        movieClip: null,
+        wishList: [],
         
     },
 
@@ -58,7 +59,18 @@ const MovieSlice = createSlice({
 
         removeMovieClip: (state, action) => {
             state.movieClip = null
+        },
+
+        addMovieInWishList: (state, action) => {
+            state.wishList = [...state?.wishList, {...action?.payload}]
+        },
+
+        removeMovieFromWishList: (state, action) => {
+            state.wishList = state?.wishList?.filter((a) => {
+                return a?.id !== action?.payload
+            })
         }
+
 
 
         
@@ -66,6 +78,6 @@ const MovieSlice = createSlice({
     }
 })
 
-export const {addNowMovie, addMovieTrailer,addTopRatedMovie, addPopularMovie, addUpcomingMovie, addMovieInfo, removeMovieInfo, addMovieCast, removeMovieCast, addMovieClip, removeMovieClip} = MovieSlice.actions
+export const {addNowMovie, addMovieTrailer,addTopRatedMovie, addPopularMovie, addUpcomingMovie, addMovieInfo, removeMovieInfo, addMovieCast, removeMovieCast, addMovieClip, removeMovieClip, addMovieInWishList, removeMovieFromWishList} = MovieSlice.actions
 
 export default MovieSlice.reducer
