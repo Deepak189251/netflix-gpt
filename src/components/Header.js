@@ -117,7 +117,7 @@ const Header = () => {
 
   //console.log(lang[selectedLanguage].signinBtn)
 
-  if(user) 
+  if(user?.uid) 
 
     // {color ? colorT : colorF}
      
@@ -133,7 +133,7 @@ const Header = () => {
               <p className=" mr-[20px] text-[14px] font-semibold cursor-pointer">TV Shows</p>
               <p className=" mr-[20px] text-[14px] font-semibold cursor-pointer">Movies</p>
               <p className=" mr-[20px] text-[14px] font-semibold cursor-pointer">New & Popular</p>
-              <p className=" mr-[20px] text-[14px] font-semibold cursor-pointer">My List</p>
+              <Link to={"/wishlist"}><p className=" mr-[20px] text-[14px] font-semibold cursor-pointer">My List</p></Link>
               <p className=" text-[14px] font-semibold cursor-pointer">Browse by Languages</p>
             </div>
               
