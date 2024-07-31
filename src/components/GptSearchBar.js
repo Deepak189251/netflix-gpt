@@ -3,6 +3,8 @@ import openai from "../utils/OpenAi"
 import { options } from "../utils/Constants"
 import { addGptMovies } from "../utils/GptSearchSlice"
 import { useDispatch } from "react-redux"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 //import { useSearchMovies } from "../hooks/useMovies"
 const GptSearch = () => {
 
@@ -66,11 +68,11 @@ const GptSearch = () => {
     }
 
     return (
-        <div className=" w-auto flex justify-center items-center">
-            <form className=" flex justify-between" onSubmit={((e) => e.preventDefault())}>
-                <input className=" mb-[5px]  bg-black w-[374px] h-[56px] text-white text-[20px]  border rounded text-left pb-2 pl-3" type="text" placeholder="Search Movies..." ref={searchText} />
-                <input className=" bg-black rounded text-white" type="number" ref={searchDate} />
-                <button onClick={getSearchMovies} className=" bg-red-600 w-[203px] mb-[5px] h-[56px] font-semibold text-white rounded text-left text-3xl flex  hover:bg-[rgb(193,17,25)] duration-300 ml-[10px]" type="submit"><span className=" rounded mt-[9px] ml-[55px]">Search</span></button>
+        <div className="">
+            <form className=" flex" onSubmit={((e) => e.preventDefault())}>
+                <input className=" mb-[5px] bg-white w-[374px] h-[56px] text-[20px] border rounded text-left pb-[3px] pl-3" type="text" placeholder="Movie Name..." ref={searchText} />
+                <input className=" bg-white h-[56px] w-[165px] text-[20px]  rounded  ml-[10px] pb-[3px] pl-3" type="number" placeholder="Release Year..." ref={searchDate} />
+                <button onClick={getSearchMovies} className=" bg-red-600 w-[70px] mb-[5px] h-[56px] font-semibold text-white rounded text-left text-3xl pl-[20px] pt-[12px] flex  hover:bg-[rgb(193,17,25)] duration-300 ml-[10px]" type="submit"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
             </form>
         </div>
     )
