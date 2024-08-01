@@ -7,6 +7,7 @@ import SignupComponent1 from "./components/SignupComponent1";
 import Header from "./components/Header";
 import EditProfile from "./components/EditProfile";
 import MovieInfo from "./components/MovieInfo";
+import WishList from "./components/WishList";
 //import { useDispatch } from "react-redux";
 //import { useEffect } from "react";
 //import { auth } from "./utils/Firebase";
@@ -70,6 +71,10 @@ function App() {
         {
           path: "/search",
           element: <GptSuggestion/>
+        },
+        {
+          path: "/wishlist",
+          element: <WishList />
         }
       ]
     },
