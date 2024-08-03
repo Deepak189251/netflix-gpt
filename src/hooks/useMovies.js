@@ -1,7 +1,7 @@
 import { nowMovieUrl, options, popularMovieUrl, topRatedMovieUrl, upcomingMovieUrl } from "../utils/Constants"
 import { useEffect } from "react"
 import { useDispatch, useSelector} from "react-redux"
-import { addMovieCast, addMovieInfo, addNowMovie, addPopularMovie, addTopRatedMovie, addUpcomingMovie, removeMovieCast, removeMovieInfo, addMovieData } from "../utils/MovieSlice"
+import { addMovieCast, addMovieInfo, addNowMovie, addPopularMovie, addTopRatedMovie, addUpcomingMovie, removeMovieCast, removeMovieInfo } from "../utils/MovieSlice"
 
 export  const useNowMovies = () => {
 
@@ -139,24 +139,6 @@ export const usePopularMovies = () => {
        
       
     }
-
-    export const useMovieData = (id) => {
-        const dispatch = useDispatch()
-        const getMovieData = async () => {
-            const url = `http://www.omdbapi.com/?i=${id}&apikey=8fccf8aa&plot=short&r=json`
-            const data = await fetch (url)
-            const json = data.json()
-            dispatch(addMovieData(json))
-        }
-
-        const movieData = useSelector(store => store.movie.movieData)
-        
-        useEffect(() => {
-            if(!movieData){
-                getMovieData()
-            }
-        }, [])
-    } 
 
      
    

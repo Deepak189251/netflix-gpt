@@ -1,16 +1,16 @@
 import MovieCard from "./MovieCard"
-//import Slider from "react-slick";
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const MovieList = ({title, movies}) => {
-   /* const settings = {
+    const settings = {
         dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 8,
         slidesToScroll: 2
-      }; */
+      };
 
     //console.log(movies)
     if(!movies) return

@@ -4,10 +4,9 @@ import SignupFooter from "./signup/SignupFooter"
 import { EmailValidation, PasswordValidation } from "../utils/Validation"
 import {  useRef, useState} from "react"
 import { createUserWithEmailAndPassword } from "firebase/auth"
-import { auth, updateProfileOnSignup, db } from "../utils/Firebase"
+import { auth, updateProfileOnSignup } from "../utils/Firebase"
 import { useDispatch } from "react-redux"
 import { addUser } from "../utils/UserSlice"
-//import { doc, setDoc, } from "firebase/firestore"; 
 //import Header from "./Header"
 
 
@@ -43,15 +42,10 @@ const SignupComponent1 = () => {
     createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
     .then((userCredential) => {
         // Signed up 
-        const user = userCredential?.user;
+        const user = userCredential.user;
         console.log(user)
-        // navigate("/browse")
-        /*const uname = email.current.value.slice(0,4)
-        const userRef = doc(db, 'users', user.uid);
-        setDoc(userRef, { name: uname, wishlist: [] }); */
-
-        localStorage.setItem(user, [])
-        dispatch(addUser({email:user.email, uid:user.uid})) 
+       // navigate("/browse")
+        dispatch(addUser(user.email)) 
         updateProfileOnSignup(user)
         
         // ...
