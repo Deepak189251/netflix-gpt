@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import Login from "./components/LogIn";
-import Browse from "./components/Browse";
+//import Browse from "./components/Browse";
 import SignupComponent1 from "./components/SignupComponent1";
 //import SignupComponent2 from "./components/signup/SignupComponent2";
 import Header from "./components/Header";
@@ -16,6 +16,10 @@ import MovieInfo from "./components/MovieInfo";
 //import { UserState } from "./utils/Context";
 //import ProtectedRoute from "./utils/ProtectedRoute";
 import GptSuggestion from "./components/GptSuggestion";
+import WishList from "./components/WishList";
+import { ErrorBoundary } from "react-error-boundary";
+import { HandleInternalError} from "./components/error/HandleError"
+import { HandleRouteError } from "./components/error/HandleRouteError";
 const Applayout = () => {
 
 
@@ -23,8 +27,10 @@ const Applayout = () => {
   return(
     
       <div className="app">
-        <Header/>
-        <Outlet/>
+       <ErrorBoundary FallbackComponent={HandleInternalError}>
+          <Header/>
+          <Outlet/>
+        </ErrorBoundary>
       </div> 
     
 
@@ -42,9 +48,10 @@ function App() {
     {
       path: "/",
       element: <Applayout />,
+      errorElement: <HandleRouteError /> ,
       children : [
         {
-          path: "/",
+          path: "",
           element: <LandingPage />
         },
         {
@@ -54,10 +61,6 @@ function App() {
         {
           path: "/signup-form",
           element: <SignupComponent1 />
-        },
-        {
-          path: "/browse",
-          element: <Browse /> ,
         },
         {
           path: "/profile",
@@ -70,6 +73,10 @@ function App() {
         {
           path: "/search",
           element: <GptSuggestion/>
+        },
+        {
+          path: "/wishlist",
+          element: <WishList />
         }
       ]
     },

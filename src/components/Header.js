@@ -45,8 +45,9 @@ const Header = () => {
         type: "Remove",
       })*/
       
-      //navigate('/')
+      navigate("/")
      // dispatch(removeUser())
+      window.location.reload()
       setInput(false)
       console.log("signout successfully")
     }).catch((error) => {
@@ -96,7 +97,7 @@ const Header = () => {
         //const uid = user.uid;
         console.log(user)
         dispatch(addUser({email:user.email, uid:user.uid}))
-        navigate("/browse")
+        navigate("")
         
         user?.photoURL && setUserImg(user?.photoURL)
         user?.displayName && setUserName(user?.displayName)
@@ -106,9 +107,10 @@ const Header = () => {
         // User is signed out
         // ...
         dispatch(removeUser())
-        navigate("/")
+        navigate("")
         setUserImg("https://wallpapers.com/images/high/netflix-profile-pictures-5yup5hd2i60x7ew3.webp")
         
+
       }
     });
 
