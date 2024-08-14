@@ -43,7 +43,11 @@ const MovieWish = ({ movie, id}) => {
         <Link to={`/movie/${movie?.id}`} >
             <div className="flex">
                 <div className=" w-[120px] h-[120px] m-[10px]">
+<<<<<<< Updated upstream
                     <img className=" w-[100%] h-[100%]"  alt="poster" src={movie?.data?.Poster}></img>
+=======
+                    <img className=" w-[100%] h-[100%]" loading="lazy"  alt="poster" src={movie?.data?.Poster}></img>
+>>>>>>> Stashed changes
                 </div>
                 <div className=" mt-[25px]">
                     <p className=" text-xl font-semibold mb-[10px]">{`${id + 1} . ${movie?.data?.Title}`}</p>

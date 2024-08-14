@@ -12,6 +12,7 @@ import { addMovieInWishList } from "../utils/MovieSlice"
 //import Header from "./Header"
  import PrimaryContainer from "./PrimaryContainer"
 import SecondaryContainer from "./SecondaryContainer"
+import { Spinner } from "../ui/Spinner"
 //import GptSuggestion from "./GptSuggestion"
 //import { doc, getDoc } from "firebase/firestore";
 
@@ -34,6 +35,8 @@ const Browse = () => {
    useUpcomingMovies()
    usePopularMovies()
    //const gptValue = useSelector(store => store.gptSearch.gptValue)
+
+
     
    if(!user) return
    if(!localStorage.getItem(user)) {
@@ -44,6 +47,7 @@ const Browse = () => {
    dispatch(addMovieInWishList(wishList))
 
 
+   setTimeout(() => <Spinner />, 0)
     
     return (
     <div className="  w-[100%] h-[100%] bg-[#141414]">

@@ -33,7 +33,7 @@ const Header = () => {
   
   const handleClick = () => {
 
-    navigate("/login")
+    navigate("login")
 
 
   }
@@ -45,8 +45,9 @@ const Header = () => {
         type: "Remove",
       })*/
       
-      //navigate('/')
+      navigate('/')
      // dispatch(removeUser())
+      window.location.reload()
       setInput(false)
       console.log("signout successfully")
     }).catch((error) => {
@@ -96,7 +97,7 @@ const Header = () => {
         //const uid = user.uid;
         console.log(user)
         dispatch(addUser({email:user.email, uid:user.uid}))
-        navigate("/browse")
+        navigate("/")
         
         user?.photoURL && setUserImg(user?.photoURL)
         user?.displayName && setUserName(user?.displayName)
@@ -107,6 +108,7 @@ const Header = () => {
         // ...
         dispatch(removeUser())
         navigate("/")
+        
         setUserImg("https://wallpapers.com/images/high/netflix-profile-pictures-5yup5hd2i60x7ew3.webp")
         
       }
@@ -133,7 +135,7 @@ const Header = () => {
               <p className=" mr-[20px] text-[14px] font-semibold cursor-pointer">TV Shows</p>
               <p className=" mr-[20px] text-[14px] font-semibold cursor-pointer">Movies</p>
               <p className=" mr-[20px] text-[14px] font-semibold cursor-pointer">New & Popular</p>
-              <Link to={"/wishlist"}><p className=" mr-[20px] text-[14px] font-semibold cursor-pointer">My List</p></Link>
+              <Link to={"wishlist"}><p className=" mr-[20px] text-[14px] font-semibold cursor-pointer">My List</p></Link>
               <p className=" text-[14px] font-semibold cursor-pointer">Browse by Languages</p>
             </div>
               

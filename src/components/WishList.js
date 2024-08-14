@@ -1,13 +1,26 @@
 import { useSelector } from "react-redux"
 import MovieWish from "./MovieWish"
+<<<<<<< Updated upstream
+=======
+import { Spinner } from "../ui/Spinner"
+>>>>>>> Stashed changes
 const WishList = () => {
 
     const wishlist = useSelector(store => store.movie.wishList)
 
+<<<<<<< Updated upstream
     if(!wishlist) return
 
     return (
         <div className=" w-[100%] h-[100%] mt-[70px] absolute bg-gray-200">
+=======
+    if(!wishlist) return(
+        <Spinner />
+    )
+
+    return (
+        <div className=" w-[100%] h-[100%] mt-[70px] absolute">
+>>>>>>> Stashed changes
             <div className=" mt-[30px] mx-[80px]">
                 <div className=" flex mb-[30px]">
                     <h1 className=" text-4xl font-bold">My WishList </h1><span className=" text-3xl font-bold ml-[10px] pt-[2px]">{`(${wishlist?.length})`}</span>

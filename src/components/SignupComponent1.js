@@ -45,6 +45,7 @@ const SignupComponent1 = () => {
         // Signed up 
         const user = userCredential?.user;
         console.log(user)
+<<<<<<< Updated upstream
         // navigate("/browse")
         /*const uname = email.current.value.slice(0,4)
         const userRef = doc(db, 'users', user.uid);
@@ -52,6 +53,10 @@ const SignupComponent1 = () => {
 
         localStorage.setItem(user, [])
         dispatch(addUser({email:user.email, uid:user.uid})) 
+=======
+       // navigate("/browse")
+        dispatch(addUser({email:user.email, uid:user.uid}))
+>>>>>>> Stashed changes
         updateProfileOnSignup(user)
         
         // ...

@@ -74,6 +74,7 @@ const GptSearch = () => {
                 <input className=" bg-white h-[56px] w-[165px] text-[20px]  rounded  ml-[10px] pb-[3px] pl-3" type="number" placeholder="Release Year..." ref={searchDate} />
                 <button onClick={getSearchMovies} className=" bg-red-600 w-[70px] mb-[5px] h-[56px] font-semibold text-white rounded text-left text-3xl pl-[20px] pt-[12px] flex  hover:bg-[rgb(193,17,25)] duration-300 ml-[10px]" type="submit"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
             </form>
+            <p className=" ml-[10px] text-black ">{"Use release year for better search results."}</p>
         </div>
     )
 }

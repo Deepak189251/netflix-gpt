@@ -17,6 +17,10 @@ import WishList from "./components/WishList";
 //import { UserState } from "./utils/Context";
 //import ProtectedRoute from "./utils/ProtectedRoute";
 import GptSuggestion from "./components/GptSuggestion";
+import WishList from "./components/WishList";
+import { ErrorBoundary } from "react-error-boundary";
+import {HandleInternalError} from "./error/HandleError"
+import { HandleRouteError } from "./error/HandleRouteError";
 const Applayout = () => {
 
 
@@ -24,8 +28,11 @@ const Applayout = () => {
   return(
     
       <div className="app">
-        <Header/>
-        <Outlet/>
+        <ErrorBoundary FallbackComponent={HandleInternalError}>
+          <Header/>
+          <Outlet/>
+        </ErrorBoundary>
+        
       </div> 
     
 
@@ -43,37 +50,38 @@ function App() {
     {
       path: "/",
       element: <Applayout />,
+      errorElement: <HandleRouteError /> ,
       children : [
         {
-          path: "/",
+          path: "",
           element: <LandingPage />
         },
         {
-          path: "/login",
+          path: "login",
           element: <Login /> 
         },
         {
-          path: "/signup-form",
+          path: "signup-form",
           element: <SignupComponent1 />
         },
         {
-          path: "/browse",
-          element: <Browse /> ,
-        },
-        {
-          path: "/profile",
+          path: "profile",
           element: <EditProfile />
         },
         {
-          path: "/movie/:resId",
+          path: "movie/:resId",
           element: <MovieInfo/>
         },
         {
-          path: "/search",
+          path: "search",
           element: <GptSuggestion/>
         },
         {
+<<<<<<< Updated upstream
           path: "/wishlist",
+=======
+          path: "wishlist",
+>>>>>>> Stashed changes
           element: <WishList />
         }
       ]
@@ -88,7 +96,9 @@ function App() {
 
 
   return (
-    <RouterProvider router={appRouter} />
+    
+      <RouterProvider router={appRouter} />
+   
   );
 }
 

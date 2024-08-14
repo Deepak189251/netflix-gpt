@@ -2,6 +2,7 @@ import MovieCard from "./MovieCard"
 //import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Spinner } from "../ui/Spinner";
 
 const MovieList = ({title, movies}) => {
    /* const settings = {
@@ -13,7 +14,11 @@ const MovieList = ({title, movies}) => {
       }; */
 
     //console.log(movies)
-    if(!movies) return
+    if(!movies) {
+        return (
+            <Spinner />
+        )
+    }
 
     return (
         <div className="">

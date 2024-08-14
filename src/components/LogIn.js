@@ -4,6 +4,8 @@ import { faGlobe } from "@fortawesome/free-solid-svg-icons"
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../utils/Firebase"
 import { useRef } from "react"
+import { Spinner } from "../ui/Spinner"
+
 //import Header from "./Header"
 //import { useDispatch } from "react-redux"
 //import { addUser } from "../utils/UserSlice"
@@ -39,6 +41,12 @@ const Login = () => {
 
             // ...
             */
+            return (
+               <Spinner />
+            )
+           
+
+           
          })
          .catch((error) => {
             const errorCode = error.code;
@@ -77,6 +85,11 @@ const Login = () => {
                         <p className=" text-[#8c8c8c]">Need help?</p>
                      </div>
                    </form>
+
+                   <div className="w-[100%] h-[50px]   flex bg-gray-100 mt-[15px] text-black justify-center text-center rounded font-semibold ">
+                     <img alt="logo" className=" w-[34px] h-[35px] mt-[1px]" src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"/>
+                     <p className=" mt-[5px] ml-[5px]">Sign in with Google</p>
+                   </div>
 
                    <p className=" mt-[30px] text-[#737373]">New to Netflix? <Link to={"/"}><span className=" text-white">Sign up now </span> </Link> </p>
 
