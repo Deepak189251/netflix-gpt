@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/UserSlice";
 import { Netflix_Logo } from "../utils/Constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faCaretDown, faCaretUp, faHouse } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faCaretDown, faCaretUp, faList } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
 //import { toggleGpt } from "../utils/GptSearchSlice";
 import { SupportedLanguage } from "../utils/Constants";
@@ -22,7 +22,8 @@ const Header = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const user = useSelector((store) => store.user)
-  const [input, setInput] = useState(false)
+  const [profile, setProfile] = useState(false)
+  const [menu, setMenu] = useState(false)
   const [userImg, setUserImg] = useState("https://wallpapers.com/images/high/netflix-profile-pictures-5yup5hd2i60x7ew3.webp")
   const [userName, setUserName] = useState('User')
  // const [color, setColor] = useState(false)
@@ -48,7 +49,7 @@ const Header = () => {
       navigate("/")
      // dispatch(removeUser())
       window.location.reload()
-      setInput(false)
+      setProfile(false)
       console.log("signout successfully")
     }).catch((error) => {
       // An error happened.
@@ -100,8 +101,18 @@ const Header = () => {
         navigate("")
         
         user?.photoURL && setUserImg(user?.photoURL)
-        user?.displayName && setUserName(user?.displayName)
-       
+        //user?.displayName || user?.email ? setUserName(user?.displayName) : setUserName(user?.email?.slice(0, user?.email?.length - 10))
+       if(user?.email){
+         if(user?.displayName){
+          setUserName(user?.displayName)
+         }
+         else{
+          setUserName(user?.email?.slice(0, user?.email?.length - 10))
+         }
+       }
+       else{
+         setUserName("Guest")
+       }
         // ...
       } else {
         // User is signed out
@@ -126,29 +137,32 @@ const Header = () => {
    return(
      /** This header is for LogedIn users */
     <div   className={colorT}>
-       <div className=" w-[100%] h-[100%] flex pr-[60px] pl-[50px]    ">
-          <img className=" w-[117px] h-[58px] pt-[8px] mr-[35px]" src={Netflix_Logo} alt="logo" />
-          <div className=" w-[100%] flex justify-between">
+       <div className=" w-[100%] h-[100%] flex lg:pr-[60px] lg:pl-[50px] pr-[30px] pl-[30px] justify-between">
+          <img className=" lg:w-[117px] lg:h-[58px] lg:mt-[6px] lg:mr-[35px] w-[100px] h-[40px] mt-[14px] mr-[30px]" src={Netflix_Logo} alt="logo" />
+          <div className=" w-[100%] md:flex hidden justify-between">
 
-            <div className=" flex text-white mt-[22px]">
-              <p className=" mr-[20px] text-[14px] font-semibold cursor-pointer">Home</p>
-              <p className=" mr-[20px] text-[14px] font-semibold cursor-pointer">TV Shows</p>
-              <p className=" mr-[20px] text-[14px] font-semibold cursor-pointer">Movies</p>
-              <p className=" mr-[20px] text-[14px] font-semibold cursor-pointer">New & Popular</p>
-              <Link to={"/wishlist"}><p className=" mr-[20px] text-[14px] font-semibold cursor-pointer">My List</p></Link>
+            <div className=" flex  text-white mt-[22px]">
+              <p className=" lg:mr-[20px] mr-[12px] text-[14px] font-semibold cursor-pointer">Home</p>
+              <p className=" lg:mr-[20px] mr-[12px] text-[14px] font-semibold cursor-pointer">TV Shows</p>
+              <p className=" lg:mr-[20px] mr-[12px] text-[14px] font-semibold cursor-pointer">Movies</p>
+              <p className=" lg:mr-[20px] mr-[12px] text-[14px] font-semibold cursor-pointer">New & Popular</p>
+              <Link to={"/wishlist"}><p className=" lg:mr-[20px] mr-[12px] text-[14px] font-semibold cursor-pointer">My List</p></Link>
               <p className=" text-[14px] font-semibold cursor-pointer">Browse by Languages</p>
             </div>
+
+            
               
             <div className=" flex">
               <div className=" mt-[17px] h-[35px] pt-[3px] pl-[6px]">
-                <Link to={"/search"}><FontAwesomeIcon icon={faMagnifyingGlass} color="white" className=" mr-[5px] w-[28px] h-[21px] mt-[5px]" /></Link>
+                <Link to={"/search"}><FontAwesomeIcon icon={faMagnifyingGlass} color="white" className=" mr-[5px] lg:w-[28px] lg:h-[21px] w-[22px] h-[20px] mt-[5px]" /></Link>
               </div>
               
-              <FontAwesomeIcon icon={faBell} color="white" className=" mt-[25px] ml-[20px] w-[24px] h-[22px] mr-[5px]"/>
+              <FontAwesomeIcon icon={faBell} color="white" className=" mt-[25px] lg:ml-[20px] ml-[12px] lg:w-[24px] lg:h-[22px] w-[22px] h-[20px] mr-[5px]"/>
 
-              <div className="flex mt-[23px]" onMouseEnter={() => setInput(true)} onMouseLeave={() => setInput(false)}>
-                <img alt="user-icon" className="w-[28px] h-[28px] ml-[20px] mr-[8px] rounded " src={userImg} />
-                {input
+              <div className="flex mt-[23px]" onMouseEnter={() => setProfile(true)} onMouseLeave={() => setProfile(false)}>
+                <img alt="user-icon" className="lg:w-[28px] lg:h-[28px] lg:ml-[20px] w-[23px] h-[23px] ml-[12px] mr-[8px] rounded " src={userImg} />
+                {profile
+
                  ?
                   <span><FontAwesomeIcon icon={faCaretUp} color="white" /> 
                     <div className="w-[218px] h-[251px] bg-black absolute right-[50px] top-[71px] border-[2px] border-transparent z-40 text-white">
@@ -181,6 +195,34 @@ const Header = () => {
               </div>
             </div>
           </div>
+          <div onMouseEnter={() => setMenu(true)} onMouseLeave={() => setMenu(false)} className=" md:hidden w-[60px] pl-[20px]" >
+              <FontAwesomeIcon  icon={faList} color="white" className=" w-[20px] mt-[20px] h-[20px]" />
+              {menu &&
+              
+              <div className=" absolute text-white right-[20px] top-[70px] bg-black items-center flex flex-col justify-between py-[10px] h-[150px] w-[120px]">
+                
+                <div>
+                  <Link to={"/wishlist"} >
+                    <p className="cursor-pointer hover:underline">WishList</p>
+                  </Link>
+                </div>
+                <div>
+                  <Link to={"/profile"}>
+                    <p className="cursor-pointer hover:underline">Profile</p>
+                  </Link>
+                </div>
+                <div>
+                  <Link to={"/search"}>
+                    <p className="cursor-pointer hover:underline">Search </p>
+                  </Link>
+                </div>
+                <div>
+                  <button className="cursor-pointer hover:underline" onClick={handleSignout}>Logout</button>
+                </div>
+              </div> 
+            }
+          </div>
+          
        </div>
     </div>
   )

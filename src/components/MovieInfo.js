@@ -16,7 +16,7 @@ const MovieInfo = () => {
     const {resId} = useParams()
     useMovieInfo(resId)
     useMovieClips(resId)
-    const [movieData, setMovieData] = useState();
+    const [movieData, setMovieData] = useState(null);
     //const [info, setInfo] = useState()
     const movieInfo = useSelector(store => store.movie.movieInfo)
     const movieCast = useSelector(store => store.movie.movieCast)
@@ -31,8 +31,12 @@ const MovieInfo = () => {
 
     useEffect(() => {
         if (movieInfo) {
-          getMovieData(movieInfo?.imdb_id);
+            if(!movieData || movieData?.imdbID !== movieInfo?.imdb_id){
+                getMovieData(movieInfo?.imdb_id);
+            }
+            
         }
+       
       }, [movieInfo]);
 
     const rottonRatings = movieData?.Ratings?.filter((a) => a.Source === "Rotten Tomatoes")
@@ -46,21 +50,20 @@ const MovieInfo = () => {
        );
  
       
-   }
-
-   const getMovieData = async (id) => {
-    try{
-      const url = `https://www.omdbapi.com/?i=${id}&apikey=8fccf8aa&plot=short&r=json`;
-      const data = await fetch(url);
-      const json = await data.json();
-      setMovieData(json);
-    } 
-    catch (err){
-        console.log(err)
-      showBoundary(err)
-      
     }
-     
+
+    const getMovieData = async (id) => {
+        try{
+            const url = `https://www.omdbapi.com/?i=${id}&apikey=8fccf8aa&plot=short&r=json`;
+            const data = await fetch(url);
+            const json = await data.json();
+            setMovieData(json);
+        } 
+        catch (err){
+            console.log(err)
+            showBoundary(err)
+      
+        }
     };
 
     
@@ -209,7 +212,7 @@ const MovieInfo = () => {
                                     </g>
                                 </svg>
 
-                                <p className=" mt-[2px] mr-[2px] text-xl font-semibold" >{rottonRatings ? rottonRatings[0]?.Value : "N/A"}</p>
+                                <p className=" mt-[2px] mr-[2px] text-xl font-semibold" >{/*rottonRatings ? rottonRatings[0]?.Value : "N/A"*/ rottonRatings ? rottonRatings[0] ? rottonRatings[0]?.Value : "N/A" : "N/A"}</p>
                             </div>
                         </div>
 

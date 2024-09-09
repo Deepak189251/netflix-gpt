@@ -16,7 +16,7 @@ const PrimaryContainer = () => {
 
     return (
         <div>
-            <VideoTitle title={title} overview={overview} />
+            <VideoTitle title={title} overview={overview} id={id} />
             <VideoBackground id={id} />
         </div>
     )

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { Link } from "react-router-dom"
+//import { Link } from "react-router-dom"
 import { updateProfile } from "firebase/auth"
 import { auth } from "../utils/Firebase"
 import { upload } from "../utils/Firebase"
@@ -23,6 +23,8 @@ const EditProfile = () => {
             // Profile updated!
             //console.log(user)
             alert("Name updated!")
+            //window.location.reload()
+            setUserName(Name.current.value)
             // ...
           }).catch((error) => {
             // An error occurred
@@ -62,11 +64,11 @@ const EditProfile = () => {
                     <button disabled={loading || !photo} className=" rounded-md ml-[30px] bg-green-400 px-2 py-1" onClick={uploadImg}>upload</button>
                 </div>
 
-                <form className=" mt-[50px] ml-[200px]" >
+                <form className=" mt-[50px] ml-[200px]" onSubmit={(e) => e.preventDefault()} >
                     <label className=" absolute top-[169px] ">Name</label>
                     <input className="outline-none border-none rounded h-[30px] w-[200px]" placeholder={userName} type="text" ref={Name} ></input>
                     
-                   <Link to={"#"}><button className=" rounded-md ml-[30px] bg-green-400 px-2 py-1" onClick={updateName} onSubmit={(e) => (e.preventDefault())} type="submit" > Update</button></Link> 
+                   <button className=" rounded-md ml-[30px] bg-green-400 px-2 py-1" onClick={updateName} type="submit" > Update</button>
                 </form>
 
                 

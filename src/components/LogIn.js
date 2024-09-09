@@ -8,16 +8,16 @@ import { useRef } from "react"
 //import { useDispatch } from "react-redux"
 //import { addUser } from "../utils/UserSlice"
 //import { UserState } from "../utils/Context"
-
+import { signInWithPopup, GoogleAuthProvider, signInAnonymously } from "firebase/auth";
 const Login = () => {
   // const dispatch = useDispatch()
   //const {state:{users}, dispatch} = UserState()
   //const navigate = useNavigate()
    const Email = useRef(null);
    const Password = useRef(null);
-   
+   const provider = new GoogleAuthProvider();
 
-   const handleLogin = () => {
+   const handleLoginWithEmail = () => {
  
       signInWithEmailAndPassword(auth, Email.current.value, Password.current.value)
          .then((userCredential) => {
@@ -49,6 +49,48 @@ const Login = () => {
    }
    
 
+   const handleLoginWithGoogle = () => {
+    
+
+
+   signInWithPopup(auth, provider)
+      .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+    // The signed-in user info.
+      const user = result.user;
+      console.log(user)
+    // IdP data available using getAdditionalUserInfo(result)
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  });
+   }
+
+
+   const handleLoginAsGuest = () => {
+     
+
+      
+      signInAnonymously(auth)
+      .then(() => {
+         // Signed in..
+      })
+      .catch((error) => {
+         const errorCode = error.code;
+         const errorMessage = error.message;
+         // ...
+      });
+   }
+
   /* const handleLogin = () => {
 
       console.log()
@@ -67,7 +109,7 @@ const Login = () => {
                    <form onSubmit={(e) => e.preventDefault()}>
                      <input className=" w-[100%] h-[50px] mb-[16px] pl-[10px] rounded placeholder-[#8c8c8c] bg-[#333]" ref={Email}  type="Email" placeholder="Email or phone number"></input>
                      <input className=" w-[100%] h-[50px] mb-[16px] pl-[10px] rounded placeholder-[#8c8c8c] bg-[#333]" ref={Password}  type="password" placeholder="Password"></input>
-                     <button  onClick={handleLogin} className=" w-[100%] h-[50px] mb-[16px] rounded bg-red-600 hover:bg-[rgb(193,17,25)] duration-300" >Sign In</button>
+                     <button  onClick={handleLoginWithEmail} className=" w-[100%] h-[50px] mb-[16px] rounded bg-red-600 hover:bg-[rgb(193,17,25)] duration-300" >Sign In</button>
                      
                      <div className=" w-[100%] flex justify-between">
                        <div >
@@ -78,9 +120,13 @@ const Login = () => {
                      </div>
                    </form>
 
-                   <div className="w-[100%] h-[50px]   flex bg-gray-100 mt-[15px] text-black justify-center text-center rounded font-semibold ">
+                   <div onClick={handleLoginWithGoogle} className="w-[100%] h-[40px] pt-[3px] cursor-pointer  flex bg-gray-100 mt-[15px] text-black justify-center text-center rounded font-semibold ">
                      <img alt="logo" className=" w-[34px] h-[35px] mt-[1px]" src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"/>
                      <p className=" mt-[5px] ml-[5px]">Sign in with Google</p>
+                   </div>
+
+                   <div onClick={handleLoginAsGuest} className="w-[100%] h-[40px] pt-[3px] cursor-pointer  flex bg-blue-300 mt-[15px] text-black justify-center text-center rounded font-semibold ">
+                     <p className=" mt-[5px] ml-[5px]">Continue as Guest</p>
                    </div>
 
                    <p className=" mt-[30px] text-[#737373]">New to Netflix? <Link to={"/signup-form"}><span className=" text-white">Sign up now </span> </Link> </p>
