@@ -126,38 +126,38 @@ const MovieInfo = () => {
 
     return (
         <div className=" bg-gray-800 w-[100%] h-auto absolute">
-            <div className=" mx-[150px] mt-[100px]">
+            <div className=" xl:mx-[150px] lg:mx-[110px] mx-[35px] mt-[100px]">
                 <div className=" flex justify-between ">
                     <div>
-                        <p className=" text-4xl font-bold text-white">{movieInfo?.title}</p>
+                        <p className=" lg:text-4xl md:text-3xl text-[20px] font-bold text-white">{movieInfo?.title}</p>
             
                         <div className=" flex mb-[10px]">
-                            <p className=" text-gray-100 mr-[10px]">{movieInfo?.release_date.slice(0,4)}</p>
+                            <p className=" text-gray-100 mr-[10px] md:text-base text-[12px]">{movieInfo?.release_date?.slice(0,4)}</p>
 
-                            <FontAwesomeIcon icon={faCircle} className=" w-[5px] h-[5px] text-gray-100 mr-[10px] mt-[10px]"/>
+                            <FontAwesomeIcon icon={faCircle} className=" w-[5px] h-[5px] text-gray-100 md:mr-[10px]  md:mt-[10px] mr-[7px] mt-[7px]"/>
 
-                            <p className=" text-gray-100 mr-[10px]">{movieData?.Rated}</p>
+                            <p className=" text-gray-100 mr-[10px] md:text-base text-[12px]">{movieData?.Rated}</p>
 
-                            <FontAwesomeIcon icon={faCircle} className=" w-[5px] h-[5px] text-gray-100 mr-[10px] mt-[10px]"/>
+                            <FontAwesomeIcon icon={faCircle} className=" w-[5px] h-[5px] text-gray-100 md:mr-[10px]  md:mt-[10px] mr-[7px] mt-[7px]"/>
 
-                            <p className=" text-gray-100">{processedRuntime}</p>
+                            <p className=" text-gray-100 md:text-base text-[12px]">{processedRuntime}</p>
                         </div>
 
                     </div>
 
                     <div className="flex text-white">
-                        <div className=" mr-[20px]">
-                            <p className=" text-base font-semibold text-gray-200">{"IMDB RATING"}</p>
+                        <div className=" md:mr-[20px] mr-[10px]"> 
+                            <p className=" md:text-base text-[12px] font-semibold text-gray-200">{"IMDB RATING"}</p>
                             <div className=" flex mt-[3px] ml-[10px]">
-                                <FontAwesomeIcon className=" mt-[4px] mr-[6px] w-[25px] h-[25px]" icon={faStar} color="yellow" />
-                                <p className=" mt-[2px] mr-[2px] text-xl font-semibold">{movieData?.imdbRating ? movieData?.imdbRating : "N/A"}</p>
+                                <FontAwesomeIcon className=" mt-[4px] mr-[6px] md:w-[25px] md:h-[25px] w-[20px] h-[20px]" icon={faStar} color="yellow" />
+                                <p className=" mt-[2px] mr-[2px] md:text-xl text-base font-semibold">{movieData?.imdbRating ? movieData?.imdbRating : "N/A"}</p>
                             </div>
                         </div>
 
-                        <div className=" mr-[20px]">
-                            <p className=" text-base font-semibold text-gray-200">{"TOMATO METER"}</p>
+                        <div className=" md:mr-[20px] mr-[10px]">
+                            <p className=" md:text-base text-[12px] font-semibold text-gray-200">{"TOMATO METER"}</p>
                             <div className=" flex mt-[3px] ml-[26px]">
-                                <svg className=" w-[25px] h-[25px] mt-[4px] mr-[6px]" type="certified" viewBox="0 0 80 80" preserveAspectRatio="xMidYMid" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                <svg className=" md:w-[25px] md:h-[25px] w-[20px] h-[20px] mt-[4px] mr-[6px]" type="certified" viewBox="0 0 80 80" preserveAspectRatio="xMidYMid" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                     <g transform="translate(2.29, 0)">
                                         <path
                                             d="M42.1942857,18.8022857 C44.3794286,18.608 49.1565714,18.7177143 51.4902857,21.0057143 C51.6297143,21.1451429 51.5085714,21.4605714 51.3097143,21.408 C47.8902857,20.4868571 42.5577143,25.0217143 39.1017143,22.0891429 C39.008,22.9485714 38.2331429,27.0857143 32.3314286,26.4731429 C32.192,26.4594286 32.1371429,26.304 32.24,26.2171429 C33.1542857,25.44 34.2765714,23.2891429 33.3142857,21.9154286 C30.3108571,23.9085714 28.7565714,23.9954286 23.2182857,21.5954286 C23.0377143,21.5177143 23.1451429,21.2228571 23.3577143,21.1748571 C24.5074286,20.9165714 27.2434286,19.9222857 29.696,19.4582857 C30.1645714,19.3691429 30.624,19.3165714 31.0674286,19.312 C28.528,18.7062857 27.4217143,18.1805714 25.7485714,18.1874286 C25.5657143,18.1897143 25.4742857,17.9611429 25.6068571,17.8354286 C28.224,15.3188571 32.9691429,15.1885714 35.2548571,17.0628571 L33.2068571,12.7862857 L35.696,12.4114286 C35.696,12.4114286 36.3451429,14.6925714 36.9257143,16.7428571 C39.5177143,13.904 43.5268571,14.192 44.8777143,16.672 C44.9577143,16.8182857 44.8251429,16.992 44.6605714,16.9622857 C43.3005714,16.7314286 42.3702857,17.8628571 42.1737143,18.7977143 L42.1942857,18.8022857"
@@ -210,25 +210,25 @@ const MovieInfo = () => {
                                             fill="#0B4902"
                                         ></path>
                                     </g>
-                                </svg>
+                                </svg>   
 
-                                <p className=" mt-[2px] mr-[2px] text-xl font-semibold" >{/*rottonRatings ? rottonRatings[0]?.Value : "N/A"*/ rottonRatings ? rottonRatings[0] ? rottonRatings[0]?.Value : "N/A" : "N/A"}</p>
+                                <p className=" mt-[2px] mr-[2px] md:text-xl text-base font-semibold" >{/*rottonRatings ? rottonRatings[0]?.Value : "N/A"*/ rottonRatings ? rottonRatings[0] ? rottonRatings[0]?.Value : "N/A" : "N/A"}</p>
                             </div>
                         </div>
 
 
                          <div className=" mt-[6px]">
-                            <FontAwesomeIcon className=" w-[40px] h-[35px] " icon={faHeart} color={wish} onClick={HandleWishlist}/>
+                            <FontAwesomeIcon className=" md:w-[40px] md:h-[35px] w-[30px] h-[25px] " icon={faHeart} color={wish} onClick={HandleWishlist}/>
                         </div>
 
                     </div>
                 </div>
                 <div className=" flex mb-[20px]">
                     <div>
-                        <img className="w-[450px] h-[500px] max-w-[300px]" alt="poster" src={`https://image.tmdb.org/t/p/w500/${movieInfo?.poster_path}`} /> 
+                        <img className="xl:max-w-[300px] xl:h-[500px] max-w-[265px] h-[380px] " alt="poster" src={`https://image.tmdb.org/t/p/w500/${movieInfo?.poster_path}`} /> 
                     </div>
 
-                    <div className=" h-[500px] w-[900px] ml-[30px]">
+                    <div className=" xl:h-[500px] h-[380px] w-[900px] ml-[30px]">
                         <iframe className="w-[100%] h-[100%]  aspect-video" src={`https://www.youtube.com/embed/${movieClip?.key}?&autoplay=1&loop=1&mute=1&playlist=${movieClip?.key}&controls=0`} title="YouTube video player"  ></iframe>
                     </div>
                 </div>

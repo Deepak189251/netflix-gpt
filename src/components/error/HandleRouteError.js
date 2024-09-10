@@ -4,7 +4,7 @@ export const HandleRouteError = ({error}) => {
     const navigate = useNavigate()
     console.log(error)
     const handleBtn = () => {
-        navigate("browse")
+        navigate("")
     }
     return (
         <div className="error-page min-h-screen flex items-center justify-center">
