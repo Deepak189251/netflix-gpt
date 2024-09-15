@@ -127,11 +127,11 @@ const MovieInfo = () => {
     return (
         <div className=" bg-gray-800 w-[100%] h-auto absolute">
             <div className=" xl:mx-[150px] lg:mx-[110px] mx-[35px] mt-[100px]">
-                <div className=" flex justify-between ">
+                <div className=" flex justify-between sm:flex-row flex-col" >
                     <div>
                         <p className=" lg:text-4xl md:text-3xl text-[20px] font-bold text-white">{movieInfo?.title}</p>
             
-                        <div className=" flex mb-[10px]">
+                        <div className=" flex sm:mb-[10px] mb-0">
                             <p className=" text-gray-100 mr-[10px] md:text-base text-[12px]">{movieInfo?.release_date?.slice(0,4)}</p>
 
                             <FontAwesomeIcon icon={faCircle} className=" w-[5px] h-[5px] text-gray-100 md:mr-[10px]  md:mt-[10px] mr-[7px] mt-[7px]"/>
@@ -145,18 +145,18 @@ const MovieInfo = () => {
 
                     </div>
 
-                    <div className="flex text-white">
-                        <div className=" md:mr-[20px] mr-[10px]"> 
-                            <p className=" md:text-base text-[12px] font-semibold text-gray-200">{"IMDB RATING"}</p>
+                    <div className="flex text-white sm:flex-row flex-col sm:mb-0 mb-[10px]">
+                        <div className=" md:mr-[20px] mr-[10px] flex sm:flex-col flex-row"> 
+                            <p className=" md:text-base text-[12px] font-semibold text-gray-200 sm:pt-0 pt-[8px]">{"IMDB RATING"}</p>
                             <div className=" flex mt-[3px] ml-[10px]">
                                 <FontAwesomeIcon className=" mt-[4px] mr-[6px] md:w-[25px] md:h-[25px] w-[20px] h-[20px]" icon={faStar} color="yellow" />
                                 <p className=" mt-[2px] mr-[2px] md:text-xl text-base font-semibold">{movieData?.imdbRating ? movieData?.imdbRating : "N/A"}</p>
                             </div>
                         </div>
 
-                        <div className=" md:mr-[20px] mr-[10px]">
-                            <p className=" md:text-base text-[12px] font-semibold text-gray-200">{"TOMATO METER"}</p>
-                            <div className=" flex mt-[3px] ml-[26px]">
+                        <div className=" md:mr-[20px] mr-[10px] flex sm:flex-col flex-row">
+                            <p className=" md:text-base text-[12px] font-semibold text-gray-200 sm:pt-0 pt-[8px]">{"TOMATO METER"}</p>
+                            <div className=" flex mt-[3px] sm:ml-[26px] ml-[10px]">
                                 <svg className=" md:w-[25px] md:h-[25px] w-[20px] h-[20px] mt-[4px] mr-[6px]" type="certified" viewBox="0 0 80 80" preserveAspectRatio="xMidYMid" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                     <g transform="translate(2.29, 0)">
                                         <path
@@ -217,7 +217,7 @@ const MovieInfo = () => {
                         </div>
 
 
-                         <div className=" mt-[6px]">
+                         <div className=" mt-[6px] sm:static absolute top-[97px] right-[40px] ">
                             <FontAwesomeIcon className=" md:w-[40px] md:h-[35px] w-[30px] h-[25px] " icon={faHeart} color={wish} onClick={HandleWishlist}/>
                         </div>
 
