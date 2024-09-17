@@ -126,7 +126,7 @@ const MovieInfo = () => {
 
     return (
         <div className=" bg-gray-800 w-[100%] h-auto absolute">
-            <div className=" xl:mx-[150px] lg:mx-[110px] mx-[35px] mt-[100px]">
+            <div className=" xl:mx-[150px] lg:mx-[110px] sm:mx-[35px] mx-[26px] mt-[100px]">
                 <div className=" flex justify-between sm:flex-row flex-col" >
                     <div>
                         <p className=" lg:text-4xl md:text-3xl text-[20px] font-bold text-white">{movieInfo?.title}</p>
@@ -217,28 +217,28 @@ const MovieInfo = () => {
                         </div>
 
 
-                         <div className=" mt-[6px] sm:static absolute top-[97px] right-[40px] ">
+                         <div className=" mt-[6px] sm:static absolute top-[97px] xs:right-[40px] right-[28px] ">
                             <FontAwesomeIcon className=" md:w-[40px] md:h-[35px] w-[30px] h-[25px] " icon={faHeart} color={wish} onClick={HandleWishlist}/>
                         </div>
 
                     </div>
                 </div>
-                <div className=" flex mb-[20px]">
+                <div className=" flex md:flex-row flex-col mb-[20px] items-center">
                     <div>
-                        <img className="xl:max-w-[300px] xl:h-[500px] max-w-[265px] h-[380px] " alt="poster" src={`https://image.tmdb.org/t/p/w500/${movieInfo?.poster_path}`} /> 
+                        <img className="xl:max-w-[300px] xl:h-[500px] md:max-w-[265px] sm:w-[460px] sm:h-[380px] xs:w-[340px] xs:h-[300px] w-[220px] h-[240px] " alt="poster" src={`https://image.tmdb.org/t/p/w500/${movieInfo?.poster_path}`} /> 
                     </div>
 
-                    <div className=" xl:h-[500px] h-[380px] w-[900px] ml-[30px]">
+                    <div className=" xl:h-[500px] md:h-[380px] md:w-[900px] sm:h-[340px] xs:h-[270px] h-[210px] md:ml-[30px] ml-0 md:mt-0 mt-[20px]">
                         <iframe className="w-[100%] h-[100%]  aspect-video" src={`https://www.youtube.com/embed/${movieClip?.key}?&autoplay=1&loop=1&mute=1&playlist=${movieClip?.key}&controls=0`} title="YouTube video player"  ></iframe>
                     </div>
                 </div>
 
                 <div className=" flex mb-[20px]">
-                    {movieInfo?.genres.map((n) => <div className=" border border-gray-500 text-gray-100 w-[120px] h-[30px] text-center rounded-xl mr-[20px] hover:bg-gray-400 cursor-pointer">{n?.name}</div> )}
+                    {movieInfo?.genres.map((n) => <div className=" border border-gray-500 text-gray-100 w-[120px] h-[30px] text-center rounded-xl md:text-[18px] sm:text-[16px] text-[14px] mr-[20px] hover:bg-gray-400 cursor-pointer">{n?.name}</div> )}
                 </div>
                 
                 <div>
-                    <p className=" text-gray-100 text-base font-medium mb-[20px]">{movieInfo?.overview}</p>
+                    <p className=" text-gray-100 sm:text-base text-[14px] font-medium mb-[20px]">{movieInfo?.overview}</p>
                 </div>
 
                 { /*<div className=" flex overflow-x-scroll overflow-y-visible h-[200px]">
@@ -254,10 +254,10 @@ const MovieInfo = () => {
 
                 <div className=" flex overflow-x-scroll">
                     {movieCast?.cast?.map((n) => 
-                        <div className=" w-[170px] h-[230px] text-center text-gray-100 mb-[10px]">
-                            <img className=" w-[110px] h-[150px] mx-auto mb-[10px]" alt="poster" src={n.profile_path ? `https://image.tmdb.org/t/p/w500/${n?.profile_path}` : imgUrl}/>
-                            <p className=" mb-[10px]">{n?.name}</p>
-                            <p className=" text-xs mb-[10px] w-[150px]">{n?.character}</p>
+                        <div className=" w-[150px] h-[230px] text-center text-gray-100 mb-[10px]">
+                            <img className=" md:w-[110px] md:h-[150px] sm:w-[90px] sm:h-[120px] w-[70px] h-[100px] mx-auto mb-[10px]" alt="poster" src={n.profile_path ? `https://image.tmdb.org/t/p/w500/${n?.profile_path}` : imgUrl}/>
+                            <p className=" mb-[10px] md:text-[16px] sm:text-[14px] text-[13px]">{n?.name}</p>
+                            <p className=" text-xs mb-[10px] md:w-[150px] sm:w-[130px] w-[110px] sm:text-[12px] text-[11px]">{n?.character}</p>
                         </div>
                     )}
                 </div>
