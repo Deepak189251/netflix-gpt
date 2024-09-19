@@ -36,7 +36,7 @@ const MovieWish = ({ movie, id}) => {
     }
 
     return (
-        <div className=" w-[620px] h-[230px] border-black border bg-white mx-[30px] my-[10px]">
+        <div className=" md:w-[620px] sm:w-[510px] w-[350px]  border-black border bg-white my-[10px]">
         <div className=" flex justify-between mb-[3px]">
         <Link to={`/movie/${movie?.id}`} >
             <div className="flex">
@@ -67,7 +67,7 @@ const MovieWish = ({ movie, id}) => {
             </div>
         </div>
         <div>
-            <div className=" mx-[10px]">
+            <div className=" mx-[10px] mb-[10px]">
                 <p>{movie?.data?.Plot}</p>
             </div>
         </div>

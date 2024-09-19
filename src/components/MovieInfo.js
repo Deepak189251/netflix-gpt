@@ -233,8 +233,8 @@ const MovieInfo = () => {
                     </div>
                 </div>
 
-                <div className=" flex mb-[20px]">
-                    {movieInfo?.genres.map((n) => <div className=" border border-gray-500 text-gray-100 w-[120px] h-[30px] text-center rounded-xl md:text-[18px] sm:text-[16px] text-[14px] mr-[20px] hover:bg-gray-400 cursor-pointer">{n?.name}</div> )}
+                <div className=" flex mb-[15px]">
+                    {movieInfo?.genres.map((n) => <div className=" border border-gray-500 text-gray-100 w-[120px] h-[30px] text-center rounded-xl md:text-[18px] mb-[5px] sm:text-[16px] text-[14px] md:mr-[20px] sm:mr-[14px] mr-[8px] hover:bg-gray-400 cursor-pointer"><p className="sm:pt-0 pt-[3px]">{n?.name}</p></div> )}
                 </div>
                 
                 <div>
