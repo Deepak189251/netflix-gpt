@@ -70,8 +70,8 @@ const GptSearch = () => {
     return (
         <div className="">
             <form className=" flex" onSubmit={((e) => e.preventDefault())}>
-                <input className=" mb-[5px] bg-white w-[374px] h-[56px] text-[20px] border rounded text-left pb-[3px] pl-3" type="text" placeholder="Movie Name..." ref={searchText} />
-                <input className=" bg-white h-[56px] w-[165px] text-[20px]  rounded  ml-[10px] pb-[3px] pl-3" type="number" placeholder="Release Year..." ref={searchDate} />
+                <input className=" mb-[5px] bg-white w-[374px] h-[56px] text-[20px] border-[2px] border-black rounded text-left pb-[3px] pl-3" type="text" placeholder="Movie Name..." ref={searchText} />
+                <input className=" bg-white h-[56px] w-[165px] text-[20px]  rounded border-[2px] border-black ml-[10px] pb-[3px] pl-3" type="number" placeholder="Release Year..." ref={searchDate} />
                 <button onClick={getSearchMovies} className=" bg-red-600 w-[70px] mb-[5px] h-[56px] font-semibold text-white rounded text-left text-3xl pl-[20px] pt-[12px] flex  hover:bg-[rgb(193,17,25)] duration-300 ml-[10px]" type="submit"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
             </form>
         </div>
