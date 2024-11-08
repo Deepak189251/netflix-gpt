@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux"
 import MovieCard from "./MovieCard"
+import { Spinner } from "./ui/Spinner"
 
 const GptMovies = () => {
 
  const {gptMovieNames, gptMovieResults} = useSelector(store => store.gptSearch)
- if(!gptMovieResults) return 
+ if(!gptMovieResults) return
 
 
     return (
