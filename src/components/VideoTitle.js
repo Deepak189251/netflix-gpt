@@ -11,7 +11,7 @@ const VideoTitle = ({title, overview, id}) => {
     }
     console.log(overview?.length)
     return(
-       <div className="w-[100%] sm:h-screen h-[300px] aspect-video   absolute">
+       <div className="w-[100%] sm:h-screen h-[300px] aspect-video absolute">
         <div className=" md:ml-[70px] sm:ml-[50px] ml-[25px] md:w-[500px] sm:w-[430px] w-[280px] xl:mt-[200px] sm:mt-[150px] mt-[90px] mb-[30px] ">
             <h1 className=" w-[100%] xl:text-4xl sm:text-2xl text-xl font-bold text-white">{title}</h1>
             <p className=" w-[100%] xl:text-lg text-base md:inline-block hidden  font-semibold mt-[20px] text-white">{string}</p>
