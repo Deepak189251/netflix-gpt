@@ -4,7 +4,7 @@ A modern movie information application built with React, Redux, and TailwindCSS.
 
 ## 🔗 Live Demo
 
-[Visit CineTracker App](https://netflixgpt-1e1f7.firebaseapp.com/)
+[Visit VetflixGPT](https://netflixgpt-1e1f7.firebaseapp.com/)
 
 ## ✨ Features
 
